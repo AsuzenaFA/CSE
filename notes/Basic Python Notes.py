@@ -37,11 +37,11 @@ print("I have a car called %s. It's pretty nice" % car_name)
 
 
 # Auto-comment - ctrl + /
-# age = input("how old are you? ")
-# print("%s?! You belong in a museum." % age)
+age = input("how old are you? ")
+print("%s?! You belong in a museum." % age)
 # hidden age
-real_age = int(input("How old are you? >_ "))
-hidden_age = real_age + 5
-print(hidden_age)
-print("%d is incredibly old. You are actually %d old." % hidden_age, real_age)
+# real_age = int(input("How old are you? >_ "))
+# hidden_age = real_age + 5
+# print(hidden_age)
+# print("%d is incredibly old. You are actually %d old." % hidden_age, real_age)
 
