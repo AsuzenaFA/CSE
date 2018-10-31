@@ -1,3 +1,4 @@
+'''
 print("Hello World!")
 print()
 # This is a comment. I can write whatever I want
@@ -45,3 +46,67 @@ print("%s?! You belong in a museum." % age)
 # print(hidden_age)
 # print("%d is incredibly old. You are actually %d old." % hidden_age, real_age)
 
+noun = input("Type in a noun")
+
+print("There is a blue %s" % noun)
+print("There is a blue " + noun)
+
+# functions
+def printHelloWorld():
+    print("Helloe World!")
+
+printHelloWorld()
+
+This  is a multi-line comment
+I can type anything here.
+
+
+# f(x) = 2x + 3
+def f(x):
+    print(2*x + 3)
+
+f(1)
+f(5)
+f(5000)
+
+#l
+# Loops
+for i in [1,2,3]:
+    printHelloWorld()
+
+print()
+for i in range(10):
+    printHelloWorld()
+
+for i in range(5):  # Range starts t 0 and goes to 4
+    f(i)
+
+for i in range(5):
+    print(i**2)
+
+a = 0
+# While loops
+while a < 10:
+    print(a)
+    a += 1  # This is the same thing as a = a + 1
+
+Hints with loops
+For loops - Use when you know EXACTLY how many iteration
+While loops - Use when you DON'T know how many iteration
+
+# Random Numbers
+import random  # This should always be on line 1
+print(random.randint(0, 100))
+'''
+# Control Statements
+def grade_calc(percentage):
+    if percentage >= 90:
+        return "A"
+    elif percentage >= 80:
+        return "B"
+    elif percentage >= 70:
+        return "C"
+    elif percentage >= 60:
+        return "F"
+
+print(grade_calc (82))
