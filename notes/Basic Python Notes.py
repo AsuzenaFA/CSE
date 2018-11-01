@@ -40,11 +40,11 @@ print("I have a car called %s. It's pretty nice" % car_name)
 # Auto-comment - ctrl + /
 age = input("how old are you? ")
 print("%s?! You belong in a museum." % age)
-# hidden age
-# real_age = int(input("How old are you? >_ "))
-# hidden_age = real_age + 5
-# print(hidden_age)
-# print("%d is incredibly old. You are actually %d old." % hidden_age, real_age)
+hidden age
+real_age = int(input("How old are you? >_ ")
+hidden_age = real_age + 5
+print(hidden_age)
+print("%d is incredibly old. You are actually %d old." % hidden_age, real_age)
 
 noun = input("Type in a noun")
 
@@ -97,7 +97,7 @@ While loops - Use when you DON'T know how many iteration
 # Random Numbers
 import random  # This should always be on line 1
 print(random.randint(0, 100))
-'''
+
 # Control Statements
 def grade_calc(percentage):
     if percentage >= 90:
@@ -110,3 +110,14 @@ def grade_calc(percentage):
         return "F"
 
 print(grade_calc (82))
+'''
+
+# Equality Statements
+print(5 > 3)
+print(5 >= 3)
+print(3 != 3)
+
+'''
+a = 3 # A is a set to 3
+s == 3 # is a equal to 3?
+'''
