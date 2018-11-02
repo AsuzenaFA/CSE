@@ -71,7 +71,7 @@ f(5000)
 
 #l
 # Loops
-for i in [1,2,3]:
+for i in [1, 2, 3]:
     printHelloWorld()
 
 print()
@@ -110,14 +110,13 @@ def grade_calc(percentage):
         return "F"
 
 print(grade_calc (82))
-'''
 
 # Equality Statements
 print(5 > 3)
 print(5 >= 3)
 print(3 != 3)
 
-'''
+
 a = 3 # A is a set to 3
 s == 3 # is a equal to 3?
 '''
