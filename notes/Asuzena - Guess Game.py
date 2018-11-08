@@ -1,21 +1,17 @@
 import random
-guess_left = 5
-number = (random.randint(1, 10))
+n = random.randint(0, 10)
 win = False
-guess = int(input("Guess a number between 1 and 10"))
-while guess_left > 0 and not win:
-    print("i am thinking of a number between 1 and 10")
-    print("take a guess ")
+guessesTaken = 0
+guess = int(input("I am thinking of a number between 1 and 10 "))
+guessesTaken = guessesTaken + 1
+while n != guess and not win and guessesTaken < 5:
+    if guess < n:
+        print("too low")
+        guess = int(input("Guess again "))
+    elif guess > n:
+        print("too high")
+        guess = int(input("Guess again"))
+    elif guess == n:
+        print("You are correct")
+        win = True
 
-    guess_left -= 1
-    if guess == number:
-     print("correct you guess it")
-     win = False
-    else:
-        if number > guess:
-            print("to low")
-        elif number < guess:
-            print("to high")
-     if guess_left == 0:
-         print("ran out of guesses")
-         win = True
