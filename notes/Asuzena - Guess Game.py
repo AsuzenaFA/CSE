@@ -14,4 +14,5 @@ while n != guess and not win and guessesTaken < 5:
     elif guess == n:
         print("You are correct")
         win = True
-
+    elif guessesTaken > 5:
+        win = False
