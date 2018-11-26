@@ -1,4 +1,4 @@
-import 
+import
 word = random
 guess = ''
 turns = 10
