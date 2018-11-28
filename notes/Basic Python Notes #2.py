@@ -31,4 +31,48 @@ print(new_list[1:3])
 print(new_list[1:4])
 print(new_list[1:])
 print(new_list[:2])
+'''
 
+# Adding thing to a list
+holiday_list = []
+holiday_list.append("Tacos")
+holiday_list.append("bumblebee")
+holiday_list.append("Red Dead Redemption 2")
+print(holiday_list)
+
+# Notice this is an "object.method(Parameters)
+
+# Removing thing from the list
+holiday_list.remove("Tacos")
+print(holiday_list)
+
+
+gift_list = ["switch", "PS4", "Xbox one"]
+print(gift_list)
+gift_list.append("3DS")
+print(gift_list)
+
+# ALSO removing thing from a list
+holiday_list.pop(0)  # Removes the item at index 0
+print(holiday_list)
+
+colors = ['red', 'bue', 'yellow', 'green', 'purple', 'pink', 'brown', 'white', 'black', 'cyan', 'gray', 'teal', 'olive'
+          'aqua', 'sky blue', 'crimson', 'turquoise']
+print(len(colors))
+# Find the index
+print("brown")
+
+string1 = "turquoise"
+list1 = list(string1)
+print(list1)
+
+# Changing lists into strings
+print("!".join(list1))
+
+for character in list1:
+    if character == "u":
+        # replace it with a star*
+        current_index = list.index(character)
+        list1.pop(current_index)
+        list.insert(current_index,"*")
+'''
