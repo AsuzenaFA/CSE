@@ -21,7 +21,7 @@ print(grocery_list)
 grocery_list[2] = "Almond milk"
 print(grocery_list[2])
 print(grocery_list)
-'''
+
 new_list = ["eggs", "cheese", "oranges", "raspberries"]
 new_list[2] = "apples"
 print("The last thing in the list is %s" % new_list[len(new_list)-1])
@@ -31,7 +31,7 @@ print(new_list[1:3])
 print(new_list[1:4])
 print(new_list[1:])
 print(new_list[:2])
-'''
+
 
 # Adding thing to a list
 holiday_list = []
@@ -61,7 +61,7 @@ colors = ['red', 'bue', 'yellow', 'green', 'purple', 'pink', 'brown', 'white', '
 print(len(colors))
 # Find the index
 print("brown")
-
+'''
 string1 = "turquoise"
 list1 = list(string1)
 print(list1)
@@ -75,4 +75,3 @@ for character in list1:
         current_index = list.index(character)
         list1.pop(current_index)
         list.insert(current_index,"*")
-'''
