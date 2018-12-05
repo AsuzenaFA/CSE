@@ -61,7 +61,7 @@ colors = ['red', 'bue', 'yellow', 'green', 'purple', 'pink', 'brown', 'white', '
 print(len(colors))
 # Find the index
 print("brown")
-'''
+
 string1 = "turquoise"
 list1 = list(string1)
 print(list1)
@@ -75,3 +75,11 @@ for character in list1:
         current_index = list.index(character)
         list1.pop(current_index)
         list.insert(current_index,"*")
+'''
+# Function practice
+# a**2 + b**2 = c**2
+def pythagorean(a, b):
+    return(a**2 + b**2)**(1/2
+
+
+print(pythagorean(3, 4))

@@ -53,7 +53,7 @@ print("There is a blue " + noun)
 
 # functions
 def printHelloWorld():
-    print("Helloe World!")
+    print("Hello World!")
 
 printHelloWorld()
 
