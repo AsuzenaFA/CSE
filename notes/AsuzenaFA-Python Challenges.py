@@ -6,8 +6,7 @@ def challenge1(first_name, last_name):
 challenge1("Asuzena", "Flores")
 
 
-
-def challenge2(numbers):
+def challenge2(number):
 
     number = int(input("Think of a number: "))
     mod = number % 2
@@ -17,8 +16,7 @@ def challenge2(numbers):
         print("Your number is even.")
 
 
-challenge2(numbers)
-
+challenge2(int)
 
 
 def challenge3(base, height):
@@ -28,7 +26,7 @@ def challenge3(base, height):
     print("area = %d" % area)
 
 
-challenge3(base, height)
+challenge3(input, input)
 
 
 def challenge4(number):
@@ -43,7 +41,6 @@ def challenge4(number):
 challenge4(4)
 
 
-
 def challenge5(radius):
     area = 3.14 * radius**2
 
@@ -51,7 +48,6 @@ def challenge5(radius):
 
 
 challenge5(2.4)
-
 
 
 def challenge6(radius):
@@ -63,5 +59,15 @@ challenge6(2.4)
 '''
 
 
-def challenge7(integer):
-    
+def challenge9(letter):
+    vowel_list = ["a", "o", "u", "e", "i"]
+    letter_list = ["b", "c", "d", "e", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q",
+                   "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+    letter = int(input("Type in a vowel or andy other letter: "))
+    if letter == vowel_list:
+        print("This is a vowel.")
+    elif letter == letter_list:
+        print("This is NOT a vowel.")
+
+
+challenge9(int)
