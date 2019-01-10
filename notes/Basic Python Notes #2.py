@@ -21,7 +21,7 @@ print(grocery_list)
 grocery_list[2] = "Almond milk"
 print(grocery_list[2])
 print(grocery_list)
-
+'''
 new_list = ["eggs", "cheese", "oranges", "raspberries"]
 new_list[2] = "apples"
 print("The last thing in the list is %s" % new_list[len(new_list)-1])
@@ -32,7 +32,7 @@ print(new_list[1:4])
 print(new_list[1:])
 print(new_list[:2])
 
-
+'''
 # Adding thing to a list
 holiday_list = []
 holiday_list.append("Tacos")

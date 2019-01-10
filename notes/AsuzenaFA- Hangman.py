@@ -1,5 +1,4 @@
-import
-word = random
+word =
 guess = ''
 turns = 10
 print(" The word has 5 letters take a guess: ")
