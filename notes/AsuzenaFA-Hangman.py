@@ -6,4 +6,4 @@ for character in list1:
     if character == "a":
         current_index = list.index(character)
         list1.pop(current_index)
-        list.insert(current_index, "a")
+        list.insert(current_index, "*")
