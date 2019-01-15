@@ -1,26 +1,18 @@
-
+import string
 import random
-word_bank = ["pink dolphin", "spongebob", "aurthor", "princess peach", "mario", "bambi", "stitch", "pepa pig",
+word_bank = ["pink dolphin", "spongebob", "urthor", "princess peach", "mario", "bambi", "stitch", "pepa pig",
              "bowser", "potato head", ]
-a = word_bank
-
+letters = (list(string.ascii_letters))
+guessed = (list.append(input))
 string1 = (random.choice(word_bank))
-list1 = list(string1)
-print("-".replace(string1))
+list1 = (list(string1))
 print(" ".join(string1))
+for i in range(len(word_bank)):
 
+    '''
+a = word_bank
 win = False
 guesses_left = 8
-guess = int(input("take a guess "))
+guess = int(input(letters.append(" ")))
 guesses_left = guesses_left - 1
-while guesses_left > 0 and not win:
-    guesses_left -= 1
-    if guess > string1 in a:
-        guess = input("Guess again")
-    elif guess < string1 in a:
-        guess = input("Guess again")
-    elif guess == string1 in a:
-        input("You guessed right take another guess ")
-    elif guesses_left <= 0:
-        win = False
-        print("You are out of guesses you lose")
+'''
