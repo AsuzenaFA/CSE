@@ -55,13 +55,13 @@ print(gift_list)
 # ALSO removing thing from a list
 holiday_list.pop(0)  # Removes the item at index 0
 print(holiday_list)
-
+'''
 colors = ['red', 'bue', 'yellow', 'green', 'purple', 'pink', 'brown', 'white', 'black', 'cyan', 'gray', 'teal', 'olive'
           'aqua', 'sky blue', 'crimson', 'turquoise']
 print(len(colors))
 # Find the index
 print("brown")
-'''
+
 string1 = "turquoise"
 list1 = list(string1)
 print(list1)
