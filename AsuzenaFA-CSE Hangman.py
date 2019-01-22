@@ -1,27 +1,34 @@
+
 import string
 import random
-word_bank = ["pink dolphin", "spongebob", "aurthor", "princess peach", "mario", "bambi", "stitch", "pepa pig",
-             "bowser", "potato head", ]
-character = (list(string.ascii_letters))
+word_bank = ["pink dolphin", "Spongebob", "Aurthor", "Princess Peach", "Mario", "Bambi", "Stitch", "Pepa Pig",
+             "Bowser", "potato head", ]
+
+list1 = (list(string.ascii_letters))
 guessed_letters = []
-string1 = (random.choice(word_bank))
-list1 = (list(string1))
-print(" ".join(string1))
-print(input("Type in a letter: "))
+string = (random.choice(word_bank))
+"-".join(string)
+word = "-" * len(string)
+print(word)
+guess = input("Take a guess: ")
 
 win = False
 turn = 8
-guessed = turn - 1
+guessed = 8
+current_index = word.index(word)
 
-for character in range(len(word_bank)):
-    if character == list1:
-        current_index = list.index(character)
-        list1.pop(current_index)
-        list.insert(current_index, "-")
-        print(" ".join(string1))
+while turn > 0 and not word:
+    guessed -= 1
+    for character in range(len(word)):
+        if guess.lower() == word:
+            guess.append(guessed_letters)
+            string.pop(current_index)
+            string.insert(current_index, guess)
+            print(word)
 
-while turn > 0:
-    turn = guessed
-    if turn == 0:
-        win = False
-        print("You lose")
+        elif guess.upper() == word:
+            string.pop(current_index)
+            string.insert(current_index, guess)
+            print(word)
+            input("Take another guess")
+        elif guess != word:

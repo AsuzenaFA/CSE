@@ -85,3 +85,4 @@ def pythagorean(a, b):
 pythagorean(3, 4)
 
 '''
+if letter.upper() == ___.upper():
