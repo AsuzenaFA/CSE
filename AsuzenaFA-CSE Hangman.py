@@ -25,7 +25,7 @@ while turn > 0 and not win:
                 print("".join(word))
     elif current_guess not in word:
         print("WRONG")
-    elif current_guess == word:
+    elif current_guess is word:
         win = True
         print("You guessed it, the word was %s" % word)
     elif turn < 0:

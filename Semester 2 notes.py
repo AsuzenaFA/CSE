@@ -17,11 +17,11 @@ colors.pop(0)
 print(colors)
 print(len(colors))
 print(colors[1])
-
+'''
 # Dictionary Notes
 states = {
 
-
+'''
 print(states["CA"])
 print(states["NV"])
 '''
@@ -100,7 +100,7 @@ complex_dictionary = {
 }
 '''
 print(complex_dictionary["RI"]["CITIES"][2])
-'''
+
 print(complex_dictionary["VA"]["NAME"])
 print(complex_dictionary["MD"]["CITIES"][0])
 
@@ -121,4 +121,11 @@ for state, facts in complex_dictionary.items():
         print(value)
         print("-" * 20)
     print("=" * 20)
+'''
+# adding to a dictionary
 
+states['AL'] = "Alaska?"  # It isn't Alaska
+
+# Changing a dictionary Value
+
+states['Al'] = "Alabama" # it's actually Alabama
