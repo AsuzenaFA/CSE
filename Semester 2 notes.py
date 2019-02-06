@@ -97,7 +97,7 @@ complex_dictionary = {
             "Reno"
         ]
     }
-}
+},
 '''
 print(complex_dictionary["RI"]["CITIES"][2])
 
