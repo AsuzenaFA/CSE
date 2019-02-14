@@ -1,5 +1,7 @@
+import Special_Random
+
 class WaterGun(object):
-    def __init__(self, capacity, distance, stock):
+    def __init__(self, capacity, distance=30, stock=False):
         # These are things that a WaterGun has.
         # All these should be relevant to our program.
         self.capacity = capacity
@@ -21,4 +23,20 @@ class WaterGun(object):
         else:
             print("Thers's no trigger!")
 
-my_water_gun = WaterGun()
+    def pump_it_up(self):
+        self.duration_of_pressure = 5
+        print("You pump the tank back to full pressure")
+# Initialize the objects
+
+
+my_water_gun = WaterGun(5.2, 40, True)
+your_water_gun = WaterGun(1.0, 1, False)
+wiebe_water_gun = WaterGun(9999999999, 999999999999999999999999999, True)
+yahir_water_gun = WaterGun(0.1)
+
+# Do stuff with
+my_water_gun.shoot(5)
+my_water_gun.pump_it_up()
+my_water_gun.shoot(1)
+
+print(Special_Random.RandomWiebe.special_random())
