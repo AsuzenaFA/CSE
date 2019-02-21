@@ -8,16 +8,30 @@ class Sword(object):
 
     def shoot(self):
         if self.grip:
-            self.swing += 1
-            if self.stamina == 0:
+            self._check_swings()
+            if self.stamina <= 0:
                 print("You have no stamina")
             elif self.stamina < self.swing:
-                print("You ran out f stamina and swung %s times" % self.swing)
+                print("You ran out of stamina and swung %s times" % self.swing)
+                self.stamina = 0
+            else:
+                print("You swing the sword")
+                self.stamina -= 10
         else:
             print("Yuo have no grip")
 
     def wait(self):
-        self.stamina = 100
-        print("You regained all your stamina")
+        if self.stamina == 0:
+            self.stamina = 100
+            print("You regained all your stamina")
 
-my_sword(10, )
+    def _check_swings(self):
+        if self.swing >= 10:
+            self.grip = False
+            print("The grip broke.")
+        else:
+            self.swing += 1
+
+
+my_sword = Sword(10, 5, 5)
+my_sword.shoot()

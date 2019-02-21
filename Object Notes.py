@@ -15,7 +15,7 @@ class WaterGun(object):
             if self.duration_of_pressure <= 0:
                 print("There's no pressure")
             elif self.duration_of_pressure < time:
-                print("You run out of pressure after fireing for %s seconds", self.duration_of_pressure)
+                print("You run out of pressure after firing for %s seconds", self.duration_of_pressure)
                 self.duration_of_pressure = 0
             else:
                 print("You shoot for %s seconds" % time)

@@ -22,7 +22,7 @@ world_map = {
         }
     },
     'WEST_FOREST': {
-        'NAME': "Northern Forest",
+        'NAME': "Western Forest",
         'DESCRIPTION': "As you are going through the Northern Forest you come across large black egg and its moving"
                        ", what do you do"
     },

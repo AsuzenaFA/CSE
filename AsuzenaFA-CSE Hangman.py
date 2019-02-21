@@ -18,17 +18,17 @@ while turn > 0 and not win:
     guessed_letters.append(current_guess)
     if current_guess.lower() in list_of_letters:
         print("CORRECT!")
+        turn += 1
         for pos in range(len(word)):
             if list_of_letters[pos].lower() == current_guess.lower():
                 word.pop(pos)
                 word.insert(pos, list_of_letters[pos])
                 print("".join(word))
-    elif current_guess not in word:
+    if current_guess not in word:
         print("WRONG")
-    elif current_guess is word:
-        win = True
-        print("You guessed it, the word was %s" % word)
     elif turn < 0:
-        win = False
-        if turn < 0:
-            print("You lose")
+        print("You lose")
+        print("The word was %s" % word)
+        if current_guess == word:
+            print("You Guessed it")
+            print("The word was %s" % word)
