@@ -40,3 +40,18 @@ my_water_gun.pump_it_up()
 my_water_gun.shoot(1)
 
 print(Special_Random.RandomWiebe.special_random())
+
+
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.current_location = starting_location
+        self.inventory = []
+        self.damage = 10
+
+    def move(self, new_location):
+        """This method moves a character to a new location
+
+        :param new_location:  The variable containing a room
+        """
+        self.current_location = new_location

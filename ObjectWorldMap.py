@@ -8,22 +8,39 @@ class Room(object):
         self.description = description
 
 
-Spawn = Room("Your Cabin", None, None, 'Backyard', 'Lawn',
+Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
              "it has two exits one to the east and one to the west")
 
-Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'Spawn', 'West_Forest',
+Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
                 "You look around and there is an axe in a log and there is"
                 " forest to the west, north, and a water fountain to the south.")
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
           "Your in a quiet forest and you hear grass hoppers to the north")
 
-WF = Room("Western Forest", '')
+WF = Room("Western Forest", 'Grass Trail', 'Pond', 'Spawn', 'Desert',
+          "You in what once was a forest but is now a bunch of stumps and you hear"
+          "frogs to the south")
 
-EF = Room("Eastern Forest",)
+Desert = Room("Desert", None, None, None, 'D1',
+              "You walked into a desert and don't know where you are, suddenly stone"
+              " walls rise up from the ground, you are now in a maze")
+'''
+D1 = Room("Desert Maze", None, None, None, 'D2', "You are at the start of the maze. "
+                                                 "There is one entrance to the west")
 
-SF = Room("Southern Forest",)
+D2 = Room("Desert Maze", 'D1', 'D3', 'D1', 'D1', "You have 4 ways")
+
+D3 = Room("Desert Maze", '')
+
+D4 = Room("Desert Maze",)
+'''
+EF = Room("Eastern Forest", 'Trench', 'Swamp', 'BB', 'Water_Fountain',
+          "Your in a forest and hear a bubbling noise to the east")
+
+SF = Room("Southern Forest", 'Ware_Fountain', 'Swamp', 'FT', 'Dense_Forest',
+          "You are in a forest")
 
 Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
             "You look around and see the water fountain to the south, forest to the north,and a big wooden"
@@ -32,7 +49,17 @@ Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
 Water_Fountain = Room("Broken Water Fountain", 'Spawn', 'Swamp', 'East_Forest', 'West_Forest',
                       "The fountain seems to be broken. You look around to see forest to the south, west, and east")
 
+Tar_River = Room("Tar River", 'BB', 'Fallen_Tree', None, 'EF',
+                 "You are at a long river of tar, you see a bridge to the north"
+                 " and a a tree over the river to the south")
 
+BB = Room("Broken Bridge", 'Trench', 'FT', None, 'EF',
+          "You walk onto the bridge but see the it is broken so you get off")
+
+FT = Room("Fallen Tree", 'BB', None, 'Ravine', 'Swamp',
+          "You are at the Fallen Tree, it looks like someone had put it there,"
+          " it looks stable and you can go over it, there is also a huge wall "
+          "to the south the you cant climb")
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -60,4 +87,42 @@ Blacksmith = Room("Jacks Weapons and Armory", 'BV', None, None, None,
                   "a sword")
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
+
+
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.current_location = starting_location
+        self.inventory = []
+        self.damage = 10
+        self.stamina = 100
+
+    def move(self, new_location):
+        """This method moves a character to a new location
+
+        :param new_location:  The variable containing a room
+        """
+        self.current_location = new_location
+
+
+# Players
+player = Player(Spawn)
+
+playing = True
+directions = ['north', 'south', 'east', 'west', 'up', 'down']
+
+while playing:
+    print(player.current_location.name)
+    print(player.current_location.description)
+    command = input(">_")
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif command.lower() in directions:
+        try:
+            room_object = getattr(player.current_location, command)
+            player.move(room_object)
+        except KeyError:
+            print("I can't go that way.")
+    else:
+        print("Command not recognized")
 
