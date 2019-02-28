@@ -1,11 +1,12 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description):
+    def __init__(self, name, north, south, east, west, description, character=None):
         self.name = name
         self.north = north
         self.south = south
         self.east = east
         self.west = west
         self.description = description
+        self.character = character
 
 
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
@@ -41,6 +42,8 @@ EF = Room("Eastern Forest", 'Trench', 'Swamp', 'BB', 'Water_Fountain',
 
 SF = Room("Southern Forest", 'Ware_Fountain', 'Swamp', 'FT', 'Dense_Forest',
           "You are in a forest")
+
+
 
 Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
             "You look around and see the water fountain to the south, forest to the north,and a big wooden"
@@ -89,40 +92,47 @@ Blacksmith = Room("Jacks Weapons and Armory", 'BV', None, None, None,
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
 
-class Player(object):
-    def __init__(self, starting_location):
-        self.health = 100
-        self.current_location = starting_location
-        self.inventory = []
-        self.damage = 10
-        self.stamina = 100
+class Character(object):
+    def __init__(self, talk):
+        self.talk = talk
+        self.charge = 10
 
-    def move(self, new_location):
-        """This method moves a character to a new location
+    class Player(object):
+        def __init__(self, starting_location):
+            self.health = 100
+            self.current_location = starting_location
+            self.inventory = []
+            self.damage = 10
+            self.stamina = 100
+            self.money = 100
 
-        :param new_location:  The variable containing a room
-        """
-        self.current_location = new_location
+        def move(self, new_location):
+            """This method moves a character to a new location
 
+            :param new_location:  The variable containing a room
+            """
+            self.current_location = new_location
 
-# Players
-player = Player(Spawn)
+    # Players
+    player = Player(Spawn)
 
-playing = True
-directions = ['north', 'south', 'east', 'west', 'up', 'down']
-
-while playing:
-    print(player.current_location.name)
-    print(player.current_location.description)
-    command = input(">_")
-    if command.lower() in ['q', 'quit', 'exit']:
-        playing = False
-    elif command.lower() in directions:
-        try:
-            room_object = getattr(player.current_location, command)
-            player.move(room_object)
-        except KeyError:
-            print("I can't go that way.")
-    else:
-        print("Command not recognized")
-
+    playing = True
+    directions = ['north', 'south', 'east', 'west', 'up', 'down']
+    actions = ['give', 'take', 'talk']
+    while playing:
+        print(player.current_location.name)
+        print(player.current_location.description)
+        command = input(">_")
+        if command.lower() in ['q', 'quit', 'exit']:
+            playing = False
+        elif command.lower() in directions:
+            try:
+                room_name = getattr(player.current_location, command)
+                room_object = globals()[room_name]
+                player.move(room_object)
+            except KeyError:
+                print("This key dose not exist")
+            except AttributeError:
+                print("I can't go that way.")
+        else:
+            print("Command not recognized")
