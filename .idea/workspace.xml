@@ -10,7 +10,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_World_map.coverage" NAME="AsuzenaFA-World map Coverage Results" MODIFIED="1549556829741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE$inheritance.coverage" NAME="inheritance Coverage Results" MODIFIED="1551371565123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE$inheritance.coverage" NAME="inheritance Coverage Results" MODIFIED="1551461035992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_Objects.coverage" NAME="AsuzenaFA-Objects Coverage Results" MODIFIED="1550593414935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_Hangman.coverage" NAME="AsuzenaFA-Hangman Coverage Results" MODIFIED="1547482853406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
     <SUITE FILE_PATH="coverage/CSE$Asuzena___Guess_Game.coverage" NAME="Asuzena - Guess Game Coverage Results" MODIFIED="1548691617820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
@@ -40,7 +40,7 @@
     <session id="-2014428206">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="33" />
+          <entry key="project.closed" value="36" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -55,36 +55,37 @@
           <entry key="project.open.time.43" value="1" />
           <entry key="project.open.time.51" value="1" />
           <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.58" value="1" />
+          <entry key="project.open.time.58" value="2" />
           <entry key="project.open.time.59" value="1" />
           <entry key="project.open.time.61" value="3" />
+          <entry key="project.open.time.62" value="1" />
           <entry key="project.open.time.63" value="2" />
           <entry key="project.open.time.64" value="1" />
           <entry key="project.open.time.66" value="1" />
           <entry key="project.open.time.75" value="1" />
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.79" value="1" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="49" />
+          <entry key="py" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="49" />
+          <entry key="Python" value="52" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="py" value="25160" />
+          <entry key="py" value="27077" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Python" value="25160" />
+          <entry key="Python" value="27077" />
         </counts>
       </usages-collector>
     </session>
@@ -92,40 +93,45 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
+        <entry file="file://$PROJECT_DIR$/inheritance.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="45" selection-start-line="45" selection-end-line="45" />
+            <state relative-caret-position="350">
+              <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
               <folding>
-                <marker date="1551371564982" expanded="true" signature="19:24" ph="..." />
-                <marker date="1551371564982" expanded="true" signature="4327:4383" ph="..." />
-                <marker date="1551371564982" expanded="true" signature="4404:4413" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="22:27" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="141:146" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="554:618" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="720:782" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="900:905" ph="..." />
+                <marker date="1551803631604" expanded="true" signature="1015:1262" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/inheritance.py">
+        <entry file="file://$PROJECT_DIR$/AsuzenaFA-Items.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-251">
-              <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+            <state relative-caret-position="496">
+              <caret line="51" selection-start-line="51" selection-end-line="51" />
               <folding>
-                <marker date="1551371705540" expanded="true" signature="22:27" ph="..." />
-                <marker date="1551371705540" expanded="true" signature="141:146" ph="..." />
-                <marker date="1551371705540" expanded="true" signature="562:626" ph="..." />
-                <marker date="1551371705540" expanded="true" signature="728:790" ph="..." />
-                <marker date="1551371705540" expanded="true" signature="908:913" ph="..." />
+                <marker date="1551804200774" expanded="true" signature="19:24" ph="..." />
+                <marker date="1551804200774" expanded="true" signature="1128:1213" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AsuzenaFA-World map.py">
+        <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1796">
-              <caret line="156" column="6" lean-forward="true" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
+            <state relative-caret-position="358">
+              <caret line="104" lean-forward="true" selection-start-line="82" selection-end-line="104" />
+              <folding>
+                <marker date="1551801368362" expanded="true" signature="19:24" ph="..." />
+                <marker date="1551801368362" expanded="true" signature="4020:4076" ph="..." />
+                <marker date="1551801368362" expanded="true" signature="4097:4106" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -160,6 +166,7 @@
         <option value="$PROJECT_DIR$/inheritacne.py" />
         <option value="$PROJECT_DIR$/ObjectWorldMap.py" />
         <option value="$PROJECT_DIR$/inheritance.py" />
+        <option value="$PROJECT_DIR$/AsuzenaFA-Items.py" />
       </list>
     </option>
   </component>
@@ -169,7 +176,7 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1382" />
@@ -352,11 +359,11 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.inheritacne" />
       <item itemvalue="Python.AsuzenaFA-CSE Hangman" />
       <item itemvalue="Python.Object Notes" />
       <item itemvalue="Python.AsuzenaFA-Objects" />
       <item itemvalue="Python.ObjectWorldMap" />
-      <item itemvalue="Python.inheritacne" />
       <item itemvalue="Python.inheritance" />
     </list>
     <recent_temporary>
@@ -386,12 +393,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.33736762" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.34795764" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.25037822" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -437,27 +444,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ObjectWorldMap.py</url>
-          <line>35</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ObjectWorldMap.py</url>
-          <line>37</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/ObjectWorldMap.py</url>
-          <line>31</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/notes/AsuzenaFA- Hangman.py">
@@ -548,38 +534,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inheritacne.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/inheritacne.py" />
     <entry file="file://$PROJECT_DIR$/AsuzenaFA-World map.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1796">
-          <caret line="156" column="6" lean-forward="true" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
+        <state relative-caret-position="327">
+          <caret line="156" column="6" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
+        <state relative-caret-position="358">
+          <caret line="104" lean-forward="true" selection-start-line="82" selection-end-line="104" />
           <folding>
-            <marker date="1551371564982" expanded="true" signature="19:24" ph="..." />
-            <marker date="1551371564982" expanded="true" signature="4327:4383" ph="..." />
-            <marker date="1551371564982" expanded="true" signature="4404:4413" ph="..." />
+            <marker date="1551801368362" expanded="true" signature="19:24" ph="..." />
+            <marker date="1551801368362" expanded="true" signature="4020:4076" ph="..." />
+            <marker date="1551801368362" expanded="true" signature="4097:4106" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/inheritance.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-251">
-          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
+        <state relative-caret-position="350">
+          <caret line="40" column="9" selection-start-line="40" selection-start-column="9" selection-end-line="40" selection-end-column="9" />
           <folding>
-            <marker date="1551371705540" expanded="true" signature="22:27" ph="..." />
-            <marker date="1551371705540" expanded="true" signature="141:146" ph="..." />
-            <marker date="1551371705540" expanded="true" signature="562:626" ph="..." />
-            <marker date="1551371705540" expanded="true" signature="728:790" ph="..." />
-            <marker date="1551371705540" expanded="true" signature="908:913" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="22:27" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="141:146" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="554:618" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="720:782" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="900:905" ph="..." />
+            <marker date="1551803631604" expanded="true" signature="1015:1262" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsuzenaFA-Items.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="496">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+          <folding>
+            <marker date="1551804200774" expanded="true" signature="19:24" ph="..." />
+            <marker date="1551804200774" expanded="true" signature="1128:1213" ph="..." />
           </folding>
         </state>
       </provider>

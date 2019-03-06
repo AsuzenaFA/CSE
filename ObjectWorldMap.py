@@ -27,23 +27,12 @@ WF = Room("Western Forest", 'Grass Trail', 'Pond', 'Spawn', 'Desert',
 Desert = Room("Desert", None, None, None, 'D1',
               "You walked into a desert and don't know where you are, suddenly stone"
               " walls rise up from the ground, you are now in a maze")
-'''
-D1 = Room("Desert Maze", None, None, None, 'D2', "You are at the start of the maze. "
-                                                 "There is one entrance to the west")
 
-D2 = Room("Desert Maze", 'D1', 'D3', 'D1', 'D1', "You have 4 ways")
-
-D3 = Room("Desert Maze", '')
-
-D4 = Room("Desert Maze",)
-'''
 EF = Room("Eastern Forest", 'Trench', 'Swamp', 'BB', 'Water_Fountain',
           "Your in a forest and hear a bubbling noise to the east")
 
 SF = Room("Southern Forest", 'Ware_Fountain', 'Swamp', 'FT', 'Dense_Forest',
           "You are in a forest")
-
-
 
 Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
             "You look around and see the water fountain to the south, forest to the north,and a big wooden"
@@ -102,9 +91,10 @@ class Character(object):
             self.health = 100
             self.current_location = starting_location
             self.inventory = []
-            self.damage = 10
+            self.damage = 5
             self.stamina = 100
             self.money = 100
+            self.manna = 100
 
         def move(self, new_location):
             """This method moves a character to a new location
