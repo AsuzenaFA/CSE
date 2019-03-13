@@ -24,6 +24,7 @@ class Sword(Item):
         self.equipped = False
         self.damage = damage
         self.stamina = Character
+        self.target = Enemy
 
     def grip(self):
         self.equipped = True
@@ -32,6 +33,7 @@ class Sword(Item):
     def swing(self):
         self.stamina -= 10
         print("You swing and lose stamina")
+        self.durability -= 1
 
     def stun(self):
         self.stamina -= 5
@@ -44,6 +46,18 @@ class Sword(Item):
     def put_away(self):
         self.equipped = False
         print("You put the sword away")
+
+
+class Enemy(object):
+    def __init__(self):
+        self.turn = 10
+        self.attack = 2
+        self.health = 100
+
+    def turn(self):
+        self.turn -= 1
+        if self.turn == 0:
+            self.attack = 0
 
 
 class BroadSword(Sword):
@@ -75,6 +89,8 @@ class Axes(Item):
     def __init__(self, name, condition, damage):
         super(Axes, self).__init__(name, condition)
         self.damage = damage
+        self.stamina = Character
+        self.equipped = False
 
 
 class Tomahawk(Axes):
@@ -84,7 +100,23 @@ class Tomahawk(Axes):
 
 class Hatchet(Axes):
     def __init__(self):
-        super
+        super(Hatchet, self).__init__("Hatchet", 1000, 10)
+
+
+class BattleAxe(Axes):
+    def __init__(self):
+        super(BattleAxe, self).__init__("Battle Axe", 2000, 50)
+
+    def grip(self):
+        self.equipped = True
+
+    def swing(self):
+        self.stamina -= 5
+        print("You swing and lose 5 stamina")
+
+    def stun(self):
+        self.stamina -= 2
+        print("You stun the enemy and lose 2 stamina")
 
 
 class Potion(Item):
@@ -155,17 +187,17 @@ class Armor(Item):
 
 
 class LeatherArmor(Armor):
-    def __int__(self):
+    def __init__(self):
         super(LeatherArmor, self).__init__("Leather Armor", "Leather", 500, 10)
 
 
 class IronArmor(Armor):
-    def __int__(self):
+    def __init__(self):
         super(IronArmor, self).__init__("Iron Armor", "Iron", 1000, 50)
 
 
 class ThiefArmor(Armor):
-    def __int__(self):
+    def __init__(self):
         super(ThiefArmor, self).__init__("Thief", "Thief", 300, 20)
 
 
@@ -179,16 +211,115 @@ class AncientArmor(Armor):
         super(AncientArmor, self).__init__("Ancient Armor", "old", 200, 10)
 
 
-# Instantiate Items
+class BarrierPendant(Armor):
+    def __init__(self):
+        super(BarrierPendant, self).__init__("Barrier Pendent", "Magic", 7000000, None)
 
+
+class Guns(Item):
+    def __init__(self, name, condition, capacity, damage):
+        super(Guns, self).__init__(name, condition)
+        self.equipped = False
+        self.durability = condition
+        self.damage = damage
+        self.capacity = capacity
+
+    def shoot(self):
+        self.capacity -= 1
+        if self.capacity < 0:
+            self.capacity = 0
+
+    def reload(self):
+        if self.capacity == 0:
+            
+
+class PlasmaPumpShotgun(Guns):
+    def __init__(self):
+        super(PlasmaPumpShotgun, self).__init__("Plasma Pump Shotgun", 1000, 2, 100)
+
+
+class Character(object):
+    def __init__(self, name, talk, health, weapon, armor):
+        self.talk = talk
+        self.health = health
+        self.weapon = weapon
+        self.armor = armor
+        self.give = False
+        self.charge = False
+        self.name = name
+
+    def take_damage(self, damage):
+        self.health -= damage
+        if self.health < 0:
+            self.health = 0
+        print("%s has %s health left" % (self.name, self.health))
+
+    def attack(self, target):
+        print("%s attacks %s for %d damage" % (self.name, target.name, self.weapon))
+        target.take_damage(self.weapon.damage)
+
+
+class Mute(Character):
+    def __init__(self):
+        super(Mute, self).__init__("Mute", False, 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
+        if self.talk:
+            print("...")
+
+
+class Player(object):
+    def __init__(self, starting_location):
+        self.health = 100
+        self.current_location = starting_location
+        self.inventory = []
+        self.damage = 5
+        self.stamina = 100
+        self.money = 100
+        self.manna = 100
+        self.weapon = None
+
+    def move(self, new_location):
+        """This method moves a character to a new location
+
+        :param new_location:  The variable containing a room
+        """
+        self.current_location = new_location
+
+
+
+# Instantiate Items
+Dragon_Armor = DragonArmor()
+Ancient_Armor = AncientArmor()
+Thief_Armor = ThiefArmor()
+Iron_Armor = IronArmor()
+Leather_Armor = LeatherArmor()
+
+Big_Health = BigHealth()
+Small_Health = SmallHealth()
+Big_Mana = BigMana()
+Small_Mana = SmallMana()
+Big_Stamina = BigStamina()
+Small_Stamina = SmallStamina()
+
+Tomahawk = Tomahawk()
+Hatchet = Hatchet()
+Battle_Axe = BattleAxe()
+
+Long_Sword = LongSword()
+Broad_Sword = BroadSword()
+Dagger = Dagger()
+Viking_Sword = VikingSword()
+Katana = Katana()
+
+# Characters
+Mute = Character("Mute", False, 99999999999999999, PlasmaPumpShotgun, BarrierPendant)
 
 # Rooms
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west")
+             "it has two exits one to the east and one to the west", Character(False))
 
 Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
-                "You look around and there is an axe in a log and there is"
+                "You look around and there is a hatchet in a log and there is"
                 " forest to the west, north, and a water fountain to the south.")
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
@@ -255,48 +386,28 @@ Blacksmith = Room("Jacks Weapons and Armory", 'BV', None, None, None,
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
 
-class Character(object):
-    def __init__(self, talk):
-        self.talk = talk
-        self.charge = 10
+# Players
+player = Player(Spawn)
+player.weapon = Dagger
 
-    class Player(object):
-        def __init__(self, starting_location):
-            self.health = 100
-            self.current_location = starting_location
-            self.inventory = []
-            self.damage = 5
-            self.stamina = 100
-            self.money = 100
-            self.manna = 100
+playing = True
+directions = ['north', 'south', 'east', 'west', 'up', 'down']
+actions = ['give', 'take', 'talk']
+while playing:
+    print(player.current_location.name)
+    print(player.current_location.description)
+    command = input(">_")
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif command.lower() in directions:
+        try:
+            room_name = getattr(player.current_location, command)
+            room_object = globals()[room_name]
+            player.move(room_object)
+        except KeyError:
+            print("This key dose not exist")
+        except AttributeError:
+            print("I can't go that way.")
+    else:
+        print("Command not recognized")
 
-        def move(self, new_location):
-            """This method moves a character to a new location
-
-            :param new_location:  The variable containing a room
-            """
-            self.current_location = new_location
-
-    # Players
-    player = Player(Spawn)
-
-    playing = True
-    directions = ['north', 'south', 'east', 'west', 'up', 'down']
-    actions = ['give', 'take', 'talk']
-    while playing:
-        print(player.current_location.name)
-        print(player.current_location.description)
-        command = input(">_")
-        if command.lower() in ['q', 'quit', 'exit']:
-            playing = False
-        elif command.lower() in directions:
-            try:
-                room_name = getattr(player.current_location, command)
-                room_object = globals()[room_name]
-                player.move(room_object)
-            except KeyError:
-                print("This key dose not exist")
-            except AttributeError:
-                print("I can't go that way.")
-        else:
-            print("Command not recognized")
