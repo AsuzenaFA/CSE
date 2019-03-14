@@ -220,18 +220,20 @@ class Guns(Item):
     def __init__(self, name, condition, capacity, damage):
         super(Guns, self).__init__(name, condition)
         self.equipped = False
+        self.trigger = False
         self.durability = condition
         self.damage = damage
         self.capacity = capacity
 
     def shoot(self):
         self.capacity -= 1
-        if self.capacity < 0:
-            self.capacity = 0
+        if self.capacity <= 0:
+            print("You have no bullets, you need to reload")
 
     def reload(self):
-        if self.capacity == 0:
-            
+        self.capacity = 2
+        print("You reloaded")
+
 
 class PlasmaPumpShotgun(Guns):
     def __init__(self):
@@ -265,6 +267,23 @@ class Mute(Character):
         if self.talk:
             print("...")
 
+class Merchant(Character):
+    def __init__(self):
+        super(Merchant, self).__init__("Token Coin", False, 99999999999999999, LongSword, BarrierPendant)
+        if self.talk:
+            print("Hey, what would you like to buy.")
+
+class BlackSmith(Character):
+    def __init__(self):
+        super(BlackSmith, self).__init__("Ronald Iron", False, 9999999999999999, BattleAxe, BarrierPendant)
+
+class Doctor(Character):
+    def __init__(self):
+        super(Doctor, self).__init__("Dr. Roger", True, 50, None, None)
+        if self.talk:
+            print("Hey you can't go near that tree with out paying, give me 100 coin and i'll let you in")
+
+
 
 class Player(object):
     def __init__(self, starting_location):
@@ -283,7 +302,6 @@ class Player(object):
         :param new_location:  The variable containing a room
         """
         self.current_location = new_location
-
 
 
 # Instantiate Items
@@ -311,16 +329,18 @@ Viking_Sword = VikingSword()
 Katana = Katana()
 
 # Characters
-Mute = Character("Mute", False, 99999999999999999, PlasmaPumpShotgun, BarrierPendant)
-
+Character = Mute()
+Character2 = Doctor()
+Character3 = Merchant()
+CHaracter4 = 
 # Rooms
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west", Character(False))
+             "it has two exits one to the east and one to the west",)
 
 Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
                 "You look around and there is a hatchet in a log and there is"
-                " forest to the west, north, and a water fountain to the south.")
+                " forest to the west, north, and a water fountain to the south.", )
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
           "Your in a quiet forest and you hear grass hoppers to the north")
