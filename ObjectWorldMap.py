@@ -1,10 +1,12 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, character=None):
+    def __init__(self, name, north, south, east, west, description, weapon=None, shop=None, character=None):
         self.name = name
         self.north = north
         self.south = south
         self.east = east
         self.west = west
+        self.weapon = weapon
+        self.shop = shop
         self.description = description
         self.character = character
         self.items = []
@@ -240,6 +242,34 @@ class PlasmaPumpShotgun(Guns):
         super(PlasmaPumpShotgun, self).__init__("Plasma Pump Shotgun", 1000, 2, 100)
 
 
+class Shops(Item):
+    def __init__(self, name, character=None):
+        super(Shops, self).__init__(name, condition=None)
+        self.name = name
+        self.character = character
+        self.stuff = []
+
+
+class MerchantsShop(Shops):
+    def __init__(self):
+        super(MerchantsShop, self).__init__("Merchant's Shop", Merchant)
+
+
+class BlacksmithShop(Shops):
+    def __init__(self):
+        super(BlacksmithShop, self).__init__("Blacksmith's Shop", Blacksmith)
+
+
+class DoctorsHT(Shops):
+    def __init__(self):
+        super(DoctorsHT, self).__init__("Doctor's Healing Tree", Doctor)
+
+
+class MutesTavern(Shops):
+    def __init__(self):
+        super(MutesTavern, self).__init__("Mute's Tavern", Mute)
+
+
 class Character(object):
     def __init__(self, name, talk, health, weapon, armor):
         self.talk = talk
@@ -267,22 +297,24 @@ class Mute(Character):
         if self.talk:
             print("...")
 
+
 class Merchant(Character):
     def __init__(self):
         super(Merchant, self).__init__("Token Coin", False, 99999999999999999, LongSword, BarrierPendant)
         if self.talk:
             print("Hey, what would you like to buy.")
 
+
 class BlackSmith(Character):
     def __init__(self):
         super(BlackSmith, self).__init__("Ronald Iron", False, 9999999999999999, BattleAxe, BarrierPendant)
+
 
 class Doctor(Character):
     def __init__(self):
         super(Doctor, self).__init__("Dr. Roger", True, 50, None, None)
         if self.talk:
             print("Hey you can't go near that tree with out paying, give me 100 coin and i'll let you in")
-
 
 
 class Player(object):
@@ -332,15 +364,21 @@ Katana = Katana()
 Character = Mute()
 Character2 = Doctor()
 Character3 = Merchant()
-CHaracter4 = 
+Character4 = BlackSmith()
+# Shops
+
+Shop = MutesTavern()
+shop2 = BlacksmithShop()
+shop3 = DoctorsHT()
+shop4 = MerchantsShop()
 # Rooms
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west",)
+             "it has two exits one to the east and one to the west", LongSword)
 
 Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
                 "You look around and there is a hatchet in a log and there is"
-                " forest to the west, north, and a water fountain to the south.", )
+                " forest to the west, north, and a water fountain to the south.", Hatchet)
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
           "Your in a quiet forest and you hear grass hoppers to the north")
@@ -357,7 +395,7 @@ EF = Room("Eastern Forest", 'Trench', 'Swamp', 'BB', 'Water_Fountain',
           "Your in a forest and hear a bubbling noise to the east")
 
 SF = Room("Southern Forest", 'Ware_Fountain', 'Swamp', 'FT', 'Dense_Forest',
-          "You are in a forest")
+          "You are in a forest, there's nothing special about it")
 
 Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
             "You look around and see the water fountain to the south, forest to the north,and a big wooden"
@@ -385,11 +423,11 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked by a nurse, the doctor "
-          "comes up to you and says you need to pay to get by the fence")
+          "comes up to you and says you need to pay to get by the fence", Doctor, DoctorsHT)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
                 "You enter the creepy Item Shop, you see many useless items but then see an elephant tusk"
-                " sword with weird carvings")
+                " sword with weird carvings", Merchant, MerchantsShop)
 
 BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
           "You walk more in to the and see a tavern to the north, a blacksmith to the south,"
@@ -397,11 +435,11 @@ BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
 
 Tavern = Room("Mute's Tavern", None, BV, None, None,
               "You walk into the tavern and sit at the bar, "
-              "there is a bartender serving other people")
+              "there is a bartender serving other people", Mute, MutesTavern)
 
 Blacksmith = Room("Jacks Weapons and Armory", 'BV', None, None, None,
                   "You walk up to the workshop and see a man working on "
-                  "a sword")
+                  "a sword", BlackSmith, BlacksmithShop)
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
@@ -430,4 +468,3 @@ while playing:
             print("I can't go that way.")
     else:
         print("Command not recognized")
-
