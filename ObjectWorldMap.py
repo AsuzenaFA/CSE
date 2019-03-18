@@ -257,7 +257,7 @@ class MerchantsShop(Shops):
 
 class BlacksmithShop(Shops):
     def __init__(self):
-        super(BlacksmithShop, self).__init__("Blacksmith's Shop", Blacksmith)
+        super(BlacksmithShop, self).__init__("Blacksmith's Shop", BlackSmith)
 
 
 class DoctorsHT(Shops):
@@ -312,7 +312,7 @@ class BlackSmith(Character):
 
 class Doctor(Character):
     def __init__(self):
-        super(Doctor, self).__init__("Dr. Roger", True, 50, None, None)
+        super(Doctor, self).__init__("Dr. Roger", False, 50, None, None)
         if self.talk:
             print("Hey you can't go near that tree with out paying, give me 100 coin and i'll let you in")
 
@@ -414,7 +414,7 @@ BB = Room("Broken Bridge", 'Trench', 'FT', None, 'EF',
 FT = Room("Fallen Tree", 'BB', None, 'Ravine', 'Swamp',
           "You are at the Fallen Tree, it looks like someone had put it there,"
           " it looks stable and you can go over it, there is also a huge wall "
-          "to the south the you cant climb")
+          "to the south the you cant climb", BattleAxe)
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -423,7 +423,7 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked by a nurse, the doctor "
-          "comes up to you and says you need to pay to get by the fence", Doctor, DoctorsHT)
+          "comes up to you", Doctor, DoctorsHT)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
                 "You enter the creepy Item Shop, you see many useless items but then see an elephant tusk"
@@ -437,7 +437,7 @@ Tavern = Room("Mute's Tavern", None, BV, None, None,
               "You walk into the tavern and sit at the bar, "
               "there is a bartender serving other people", Mute, MutesTavern)
 
-Blacksmith = Room("Jacks Weapons and Armory", 'BV', None, None, None,
+Blacksmith = Room("Jacks Weapons and Armory", None, 'BV', None, None,
                   "You walk up to the workshop and see a man working on "
                   "a sword", BlackSmith, BlacksmithShop)
 
@@ -450,7 +450,7 @@ player.weapon = Dagger
 
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
-actions = ['give', 'take', 'talk']
+PlayerActions = ['give', 'talk', 'pick up', 'drop']
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
@@ -468,3 +468,7 @@ while playing:
             print("I can't go that way.")
     else:
         print("Command not recognized")
+
+else:
+    PlayerActions = talk = Character.talk = True
+
