@@ -1,15 +1,16 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, weapon=None, shop=None, character=None):
+    def __init__(self, name, north, south, east, west, description, items=None, shop=None, character=None):
+        if items is None:
+            items = []
         self.name = name
         self.north = north
         self.south = south
         self.east = east
         self.west = west
-        self.weapon = weapon
         self.shop = shop
         self.description = description
         self.character = character
-        self.items = []
+        self.items = items
 
 
 class Item(object):
@@ -17,6 +18,58 @@ class Item(object):
         self.name = name
         self.durability = condition
         self.equipped = False
+
+
+class WeirdStuff(Item):
+    def __init__(self, name, description):
+        super(WeirdStuff, self).__init__(name, condition=None)
+        self.description = description
+        self.examine = True
+
+
+def examine(self):
+    if self.examine:
+        print('description')
+
+
+class MammothTusk(WeirdStuff):
+    def __init__(self):
+        super(MammothTusk, self).__init__("Ancient Mammoths Tusk", "With all the three pices of the tusk together you "
+                                                                   "can now read the craving on it, the tusk says,"
+                                                                   ""
+                                                                   "'Property of MK'"
+                                                                   "MK Stands for the Magma King"
+                                                                   "You should return it")
+
+
+class MTP1(WeirdStuff):
+    def __init__(self):
+        super(MTP1, self).__init__("Tusk Part 1", "You Bought this 'Elephant Tusk' at a Merchants shop"
+                                                  ", it has the word 'Pro' carved in at the side")
+
+
+class MTP2(WeirdStuff):
+    def __init__(self):
+        super(MTP2, self).__init__("Tusk Part 2", "You found this tusk part in a tar pit, it had tar in the carving"
+                                                  " but you can read it and it says"
+                                                  " 'perty'")
+
+
+class MTP3(WeirdStuff):
+    def __init__(self):
+        super(MTP3, self).__init__("Tusk part 3", "You found this in the swamp area on top of a pile of bones")
+
+
+class PinkEgg(WeirdStuff):
+    def __init__(self):
+        super(PinkEgg, self).__init__("Pink Wyvern Egg", "This is the egg you collected in the Wyverns Cave")
+
+
+class BlackBearSkin(WeirdStuff):
+    def __init__(self):
+        super(BlackBearSkin, self).__init__("Black Bear Skin", "This is a Bear skin that you found at the entrance"
+                                                               " of the wasteland"
+                                                               " The inside of it says 'Rat King's'")
 
 
 class Sword(Item):
@@ -271,8 +324,8 @@ class MutesTavern(Shops):
 
 
 class Character(object):
-    def __init__(self, name, talk, health, weapon, armor):
-        self.talk = talk
+    def __init__(self, name, health, weapon, armor):
+        self.talk = False
         self.health = health
         self.weapon = weapon
         self.armor = armor
@@ -293,35 +346,50 @@ class Character(object):
 
 class Mute(Character):
     def __init__(self):
-        super(Mute, self).__init__("Mute", False, 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
+        super(Mute, self).__init__("Mute", 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
         if self.talk:
             print("...")
 
 
 class Merchant(Character):
     def __init__(self):
-        super(Merchant, self).__init__("Token Coin", False, 99999999999999999, LongSword, BarrierPendant)
+        super(Merchant, self).__init__("Token Coin", 99999999999999999, LongSword, BarrierPendant)
         if self.talk:
             print("Hey, what would you like to buy.")
 
 
 class BlackSmith(Character):
     def __init__(self):
-        super(BlackSmith, self).__init__("Ronald Iron", False, 9999999999999999, BattleAxe, BarrierPendant)
+        super(BlackSmith, self).__init__("Ronald Iron", 9999999999999999, BattleAxe, BarrierPendant)
 
 
 class Doctor(Character):
     def __init__(self):
-        super(Doctor, self).__init__("Dr. Roger", False, 50, None, None)
+        super(Doctor, self).__init__("Dr. Roger", 50, None, None)
         if self.talk:
             print("Hey you can't go near that tree with out paying, give me 100 coin and i'll let you in")
 
 
+class Thief1(Character):
+    def __init__(self):
+        super(Thief1, self).__init__("Uno", 90, Dagger, ThiefArmor)
+
+
+class Thief2(Character):
+    def __init__(self):
+        super(Thief2, self).__init__("Dos", 90, Dagger, ThiefArmor)
+
+
+class Thief3(Character):
+    def __init__(self):
+        super(Thief3, self).__init__("Tres", 90, Dagger, ThiefArmor)
+
+
 class Player(object):
-    def __init__(self, starting_location):
+    def __init__(self, starting_location, inventory=[]):
         self.health = 100
         self.current_location = starting_location
-        self.inventory = []
+        self.inventory = inventory
         self.damage = 5
         self.stamina = 100
         self.money = 100
@@ -360,6 +428,14 @@ Dagger = Dagger()
 Viking_Sword = VikingSword()
 Katana = Katana()
 
+# Werid Items
+Pink_Egg = PinkEgg()
+Black_Bear_Skin = BlackBearSkin()
+MTP1 = MTP1()
+MTP2 = MTP2()
+MTP3 = MTP3()
+Mammoth_Tusk = MammothTusk()
+
 # Characters
 Character = Mute()
 Character2 = Doctor()
@@ -367,18 +443,18 @@ Character3 = Merchant()
 Character4 = BlackSmith()
 # Shops
 
-Shop = MutesTavern()
-shop2 = BlacksmithShop()
-shop3 = DoctorsHT()
-shop4 = MerchantsShop()
+Mutes_Tavern = MutesTavern()
+Black_Smith_Shop = BlacksmithShop()
+Doctors_HT = DoctorsHT()
+Merchants_Shop = MerchantsShop()
 # Rooms
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west", LongSword)
+             "it has two exits one to the east and one to the west", [Long_Sword])
 
 Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
                 "You look around and there is a hatchet in a log and there is"
-                " forest to the west, north, and a water fountain to the south.", Hatchet)
+                " forest to the west, north, and a water fountain to the south.", [Hatchet])
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
           "Your in a quiet forest and you hear grass hoppers to the north")
@@ -404,17 +480,34 @@ Lawn = Room("Your Lawn", 'North_Forest', 'Water_Fountain', 'Gates', 'Spawn',
 Water_Fountain = Room("Broken Water Fountain", 'Spawn', 'Swamp', 'East_Forest', 'West_Forest',
                       "The fountain seems to be broken. You look around to see forest to the south, west, and east")
 
-Tar_River = Room("Tar River", 'BB', 'Fallen_Tree', None, 'EF',
+Tar_River = Room("Tar River", 'BB', 'FT', None, 'EF',
                  "You are at a long river of tar, you see a bridge to the north"
                  " and a a tree over the river to the south")
 
 BB = Room("Broken Bridge", 'Trench', 'FT', None, 'EF',
           "You walk onto the bridge but see the it is broken so you get off")
 
-FT = Room("Fallen Tree", 'BB', None, 'Ravine', 'Swamp',
+FT = Room("Fallen Tree", 'BB', None, 'Tar_Pit', 'Swamp',
           "You are at the Fallen Tree, it looks like someone had put it there,"
           " it looks stable and you can go over it, there is also a huge wall "
-          "to the south the you cant climb", BattleAxe)
+          "to the south the you cant climb", [Battle_Axe])
+
+Tar_Pit = Room("Tar Pit", 'Wasteland', 'Revine', None, 'FT',
+               "Your at a tar pit a bit away from the tar river, you see something sticking out of the pit",
+               [MTP2])
+
+Revine = Room("Wyvern's Cave", 'Tar_Pit', None, None, None,
+              "You wonder into a revine, its very hot, you see a sliver "
+              "of light in the wall and you walk towards it..."
+              "When you reach the other side you are surrounded by wyverns", [Pink_Egg])
+
+WastelandE = Room("The Wasteland Entrance", 'FOW', 'Tar_Pit', None, 'Rope_Bridge',
+                  "You are at the front of what looks like a run down city. The entence is a broken fence "
+                  "and you cna go in, but there is a weird fuzzy thing stuck in the fence", [Black_Bear_Skin])
+
+FOW = Room("Evergreen Road", 'MOW', 'WastelandE', None, None,
+           "You walk into the place and you are walking down a road..."
+           "You are surrounded but 3 thieves", [], None,)
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -422,12 +515,12 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "a merchant to the south, and a castle far towards the east")
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
-          "You walk up to the area but are blocked by a nurse, the doctor "
-          "comes up to you", Doctor, DoctorsHT)
+          "You walk up to the area but are blocked bya nurse, the doctor "
+          "comes up to you", [], Doctor, Doctors_HT)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
-                "You enter the creepy Item Shop, you see many useless items but then see an elephant tusk"
-                " sword with weird carvings", Merchant, MerchantsShop)
+                "You enter the creepy Item Shop, you see many useless items"
+                " sword with weird carvings", [MTP1], Merchant, Merchants_Shop)
 
 BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
           "You walk more in to the and see a tavern to the north, a blacksmith to the south,"
@@ -435,11 +528,11 @@ BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
 
 Tavern = Room("Mute's Tavern", None, BV, None, None,
               "You walk into the tavern and sit at the bar, "
-              "there is a bartender serving other people", Mute, MutesTavern)
+              "there is a bartender serving other people", [], Mute, Mutes_Tavern)
 
 Blacksmith = Room("Jacks Weapons and Armory", None, 'BV', None, None,
                   "You walk up to the workshop and see a man working on "
-                  "a sword", BlackSmith, BlacksmithShop)
+                  "a sword", [], BlackSmith, Black_Smith_Shop)
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
@@ -451,9 +544,20 @@ player.weapon = Dagger
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
 PlayerActions = ['give', 'talk', 'pick up', 'drop']
+
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
+    print()
+    if len(player.current_location.items) > 0:
+        for item in player.current_location.items:
+            print(item.name)
+    else:
+        print("There is nothing in this room")
+
+    if len(player.inventory) > 25:
+        
+
     command = input(">_")
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
@@ -468,7 +572,3 @@ while playing:
             print("I can't go that way.")
     else:
         print("Command not recognized")
-
-else:
-    PlayerActions = talk = Character.talk = True
-

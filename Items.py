@@ -1,3 +1,5 @@
+import Player
+
 class Item(object):
     def __init__(self, name, condition):
         self.name = name
@@ -11,7 +13,7 @@ class Sword(Item):
         self.durability = 100
         self.equipped = False
         self.damage = damage
-        self.stamina = Character
+        self.stamina = Player
 
     def grip(self):
         self.equipped = True
@@ -151,25 +153,93 @@ class AncientArmor(Armor):
         super(AncientArmor, self).__init__("Ancient Armor", "old", 200, 10)
 
 
-class Character(object):
-    def __init__(self, talk):
-        self.talk = talk
-        self.charge = 10
+ class BarrierPendant(Armor):
+     def __init__(self):
+        super(BarrierPendant, self).__init__("Barrier Pendent", "Magic", 7000000, None)
 
-    class Player(object):
-        def __init__(self, starting_location):
-            self.current_health = 100
-            self.current_location = starting_location
-            self.inventory = []
-            self.damage = 5
-            self.stamina = 100
-            self.money = 100
-            self.manna = 100
-            self.armor = 0
 
-        def move(self, new_location):
-            """This method moves a character to a new location
+class Axes(Item):
+    def __init__(self, name, condition, damage):
+        super(Axes, self).__init__(name, condition)
+        self.damage = damage
+        self.stamina = Player
+        self.equipped = False
 
-            :param new_location:  The variable containing a room
-            """
-            self.current_location = new_location
+
+class Tomahawk(Axes):
+    def __init__(self):
+        super(Tomahawk, self).__init__("Tomahawk", 500, 30)
+
+
+class Hatchet(Axes):
+    def __init__(self):
+        super(Hatchet, self).__init__("Hatchet", 1000, 10)
+
+
+class BattleAxe(Axes):
+    def __init__(self):
+        super(BattleAxe, self).__init__("Battle Axe", 2000, 50)
+
+    def grip(self):
+        self.equipped = True
+
+    def swing(self):
+        self.stamina -= 5
+        print("You swing and lose 5 stamina")
+
+    def stun(self):
+        self.stamina -= 2
+        print("You stun the enemy and lose 2 stamina")
+
+
+class WeirdStuff(Item):
+    def __init__(self, name, description):
+        super(WeirdStuff, self).__init__(name, condition=None)
+        self.description = description
+        self.examine = True
+
+
+def examine(self):
+    if self.examine:
+        print('description')
+
+
+class MammothTusk(WeirdStuff):
+    def __init__(self):
+        super(MammothTusk, self).__init__("Ancient Mammoths Tusk", "With all the three pices of the tusk together you "
+                                                                   "can now read the craving on it, the tusk says,"
+                                                                   ""
+                                                                   "'Property of MK'"
+                                                                   "MK Stands for the Magma King"
+                                                                   "You should return it")
+
+
+class MTP1(WeirdStuff):
+    def __init__(self):
+        super(MTP1, self).__init__("Tusk Part 1", "You Bought this 'Elephant Tusk' at a Merchants shop"
+                                                  ", it has the word 'Pro' carved in at the side")
+
+
+class MTP2(WeirdStuff):
+    def __init__(self):
+        super(MTP2, self).__init__("Tusk Part 2", "You found this tusk part in a tar pit, it had tar in the carving"
+                                                  " but you can read it and it says"
+                                                  " 'perty'")
+
+
+class MTP3(WeirdStuff):
+    def __init__(self):
+        super(MTP3, self).__init__("Tusk part 3", "You found this in the swamp area on top of a pile of bones")
+
+
+class PinkEgg(WeirdStuff):
+    def __init__(self):
+        super(PinkEgg, self).__init__("Pink Wyvern Egg", "This is the egg you collected in the Wyverns Cave")
+
+
+class BlackBearSkin(WeirdStuff):
+    def __init__(self):
+        super(BlackBearSkin, self).__init__("Black Bear Skin", "This is a Bear skin that you found at the entrance"
+                                                               " of the wasteland"
+                                                               " The inside of it says 'Rat King's'")
+
