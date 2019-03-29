@@ -18,6 +18,14 @@ class Item(object):
         self.name = name
         self.durability = condition
         self.equipped = False
+        self.found = None
+
+    def pickup(self):
+        self.found = None
+        if player.current_location.items is not None:
+            if player.current_location.items.name.lower() == item.name.lower():
+                self.found = player.current_location.items
+        if isinstance(self.found, )
 
 
 class WeirdStuff(Item):
@@ -556,19 +564,18 @@ while playing:
         print("There is nothing in this room")
 
     if len(player.inventory) > 25:
-        
 
-    command = input(">_")
-    if command.lower() in ['q', 'quit', 'exit']:
-        playing = False
-    elif command.lower() in directions:
-        try:
-            room_name = getattr(player.current_location, command)
-            room_object = globals()[room_name]
-            player.move(room_object)
-        except KeyError:
-            print("This key dose not exist")
-        except AttributeError:
-            print("I can't go that way.")
-    else:
-        print("Command not recognized")
+        command = input(">_")
+        if command.lower() in ['q', 'quit', 'exit']:
+            playing = False
+        elif command.lower() in directions:
+            try:
+                room_name = getattr(player.current_location, command)
+                room_object = globals()[room_name]
+                player.move(room_object)
+            except KeyError:
+                print("This key dose not exist")
+            except AttributeError:
+                print("I can't go that way.")
+        else:
+            print("Command not recognized")
