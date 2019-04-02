@@ -18,14 +18,33 @@ class Item(object):
         self.name = name
         self.durability = condition
         self.equipped = False
-        self.found = None
 
-    def pickup(self):
-        self.found = None
-        if player.current_location.items is not None:
-            if player.current_location.items.name.lower() == item.name.lower():
-                self.found = player.current_location.items
-        if isinstance(self.found, )
+
+def pickup(_Item_name):
+    items_found = None
+    if player.current_location.items is not None:
+        if player.current_location.items.name.lower() == _Item_name.lower():
+            _items_found = player.current_location.items
+    if isinstance(items_found, Item):
+        print("You picked up " + _Item_name.name)
+        player.inventory.append(_Item_name)
+        player.current_location.item = None
+
+
+def drop(self):
+    items_found = None
+    for item in player.inventory:
+        if item.name.lower() == item_name.lower():
+            items_found = item
+            print("You dropped the item %s" % item.name)
+    if items_found is not None:
+        if player.current_location.item is None:
+            player.current_location.item = items_found
+            player.inventory.remove(items_found)
+        else:
+            print("That item is already in there.")
+    else:
+        print("You don't have this item.")
 
 
 class WeirdStuff(Item):
@@ -394,10 +413,10 @@ class Thief3(Character):
 
 
 class Player(object):
-    def __init__(self, starting_location, inventory=[]):
+    def __init__(self, starting_location):
         self.health = 100
         self.current_location = starting_location
-        self.inventory = inventory
+        self.inventory = []
         self.damage = 5
         self.stamina = 100
         self.money = 100
@@ -557,25 +576,25 @@ while playing:
     print(player.current_location.name)
     print(player.current_location.description)
     print()
-    if len(player.current_location.items) > 0:
-        for item in player.current_location.items:
-            print(item.name)
+    if player.current_location.items is not None:
+        print("There is a %s in here" % player.current_location.items.name)
     else:
         print("There is nothing in this room")
 
-    if len(player.inventory) > 25:
-
-        command = input(">_")
-        if command.lower() in ['q', 'quit', 'exit']:
-            playing = False
-        elif command.lower() in directions:
-            try:
-                room_name = getattr(player.current_location, command)
-                room_object = globals()[room_name]
-                player.move(room_object)
-            except KeyError:
-                print("This key dose not exist")
-            except AttributeError:
-                print("I can't go that way.")
-        else:
-            print("Command not recognized")
+    command = input(">_")
+    if command.lower() in ['q', 'quit', 'exit']:
+        playing = False
+    elif "pickup" in command:
+        Item_name = command[7:]
+        pickup(Item_name)
+    elif command.lower() in directions:
+        try:
+            room_name = getattr(player.current_location, command)
+            room_object = globals()[room_name]
+            player.move(room_object)
+        except KeyError:
+            print("This key dose not exist")
+        except AttributeError:
+            print("I can't go that way.")
+    else:
+        print("Command not recognized")
