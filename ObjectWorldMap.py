@@ -10,7 +10,7 @@ class Room(object):
         self.shop = shop
         self.description = description
         self.character = character
-        self.items = items
+        self.items = []
 
 
 class Item(object):
@@ -20,27 +20,27 @@ class Item(object):
         self.equipped = False
 
 
-def pickup(_Item_name):
-    items_found = None
+def pickup():
+    _found_item = None
     if player.current_location.items is not None:
-        if player.current_location.items.name.lower() == _Item_name.lower():
+        if player.current_location.items.name.lower() == found_item.lower():
             _items_found = player.current_location.items
-    if isinstance(items_found, Item):
-        print("You picked up " + _Item_name.name)
-        player.inventory.append(_Item_name)
+    if isinstance(found_item, Item):
+        print("You picked up " + _found_item.name)
+        player.inventory.append(found_item)
         player.current_location.item = None
 
 
-def drop(self):
-    items_found = None
+def drop():
+    _found_item = None
     for item in player.inventory:
-        if item.name.lower() == item_name.lower():
-            items_found = item
+        if item.name.lower() == _found_item.lower():
+            _found_item = item
             print("You dropped the item %s" % item.name)
-    if items_found is not None:
+    if found_item is not None:
         if player.current_location.item is None:
-            player.current_location.item = items_found
-            player.inventory.remove(items_found)
+            player.current_location.item = found_item
+            player.inventory.remove(found_item)
         else:
             print("That item is already in there.")
     else:
@@ -131,15 +131,40 @@ class Sword(Item):
 
 
 class Enemy(object):
-    def __init__(self):
-        self.turn = 10
-        self.attack = 2
+    def __init__(self, attack):
+        self.stamina = 100
+        self.attack = attack
         self.health = 100
 
     def turn(self):
-        self.turn -= 1
+        self.stamina -= 10
         if self.turn == 0:
             self.attack = 0
+
+
+class Ogre(Enemy):
+    def __init__(self):
+        super(Ogre, self).__init__(5)
+
+
+class GiantToads(Enemy):
+    def __init__(self):
+        super(GiantToads, self).__init__(3)
+
+
+class Moles(Enemy):
+    def __init__(self):
+        super(Moles, self).__init__(4)
+
+
+class Rats(Enemy):
+    def __init__(self):
+        super(Rats, self).__init__(6)
+
+
+class Roach(Enemy):
+    def __init__(self):
+        super(Roach, self).__init__(4)
 
 
 class BroadSword(Sword):
@@ -577,7 +602,7 @@ while playing:
     print(player.current_location.description)
     print()
     if player.current_location.items is not None:
-        print("There is a %s in here" % player.current_location.items.name)
+        print("There is a %s in here" % player.current_location.items.index)
     else:
         print("There is nothing in this room")
 
@@ -585,8 +610,8 @@ while playing:
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif "pickup" in command:
-        Item_name = command[7:]
-        pickup(Item_name)
+        found_item = command[7:]
+        pickup()
     elif command.lower() in directions:
         try:
             room_name = getattr(player.current_location, command)
