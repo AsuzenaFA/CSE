@@ -68,21 +68,18 @@ print(list1)
 
 # Changing lists into strings
 print("!".join(list1))
-
+'''
 for character in list1:
     if character == "u":
         # replace it with a star*
         current_index = list.index(character)
         list1.pop(current_index)
         list.insert(current_index,"*")
-'''
+
 # Function practice
 # a**2 + b**2 = c**2
 def pythagorean(a, b):
     return(a**2 + b**2)**(1/2
-
-
 pythagorean(3, 4)
-
-'''
 if letter.upper() == ___.upper():
+'''

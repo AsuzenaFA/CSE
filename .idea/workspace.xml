@@ -12,13 +12,13 @@
     <SUITE FILE_PATH="coverage/CSE$inheritance.coverage" NAME="inheritance Coverage Results" MODIFIED="1551461035992" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_Objects.coverage" NAME="AsuzenaFA-Objects Coverage Results" MODIFIED="1550593414935" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_Hangman.coverage" NAME="AsuzenaFA-Hangman Coverage Results" MODIFIED="1547482853406" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
-    <SUITE FILE_PATH="coverage/CSE$Basic_Python_Notes__2.coverage" NAME="Basic Python Notes #2 Coverage Results" MODIFIED="1547741604349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
     <SUITE FILE_PATH="coverage/CSE$dictionary_world_map_Asuzena_FA.coverage" NAME="dictionary_world_map-Asuzena FA Coverage Results" MODIFIED="1548952938612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
+    <SUITE FILE_PATH="coverage/CSE$Basic_Python_Notes__2.coverage" NAME="Basic Python Notes #2 Coverage Results" MODIFIED="1554389779513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
     <SUITE FILE_PATH="coverage/CSE$Semester_2_notes.coverage" NAME="Semester 2 notes Coverage Results" MODIFIED="1548865114737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_CSE_Hangman.coverage" NAME="AsuzenaFA-CSE Hangman Coverage Results" MODIFIED="1550764690157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_Items.coverage" NAME="AsuzenaFA-Items Coverage Results" MODIFIED="1551888208966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Object_Notes.coverage" NAME="Object Notes Coverage Results" MODIFIED="1552576674081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CSE$ObjectWorldMap.coverage" NAME="ObjectWorldMap Coverage Results" MODIFIED="1554306110567" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CSE$ObjectWorldMap.coverage" NAME="ObjectWorldMap Coverage Results" MODIFIED="1554391077210" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_World_map.coverage" NAME="AsuzenaFA-World map Coverage Results" MODIFIED="1549556829741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CSE$Asuzena___Guess_Game.coverage" NAME="Asuzena - Guess Game Coverage Results" MODIFIED="1548691617820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/notes" />
     <SUITE FILE_PATH="coverage/CSE$AsuzenaFA_CSE_Hangman2.coverage" NAME="AsuzenaFA-CSE Hangman2 Coverage Results" MODIFIED="1548260754046" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -41,7 +41,7 @@
     <session id="-2014428206">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="55" />
+          <entry key="project.closed" value="56" />
           <entry key="project.open.time.101" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.19" value="1" />
@@ -58,7 +58,7 @@
           <entry key="project.open.time.47" value="2" />
           <entry key="project.open.time.49" value="1" />
           <entry key="project.open.time.51" value="1" />
-          <entry key="project.open.time.53" value="1" />
+          <entry key="project.open.time.53" value="2" />
           <entry key="project.open.time.55" value="1" />
           <entry key="project.open.time.56" value="2" />
           <entry key="project.open.time.57" value="1" />
@@ -74,29 +74,29 @@
           <entry key="project.open.time.76" value="1" />
           <entry key="project.open.time.79" value="2" />
           <entry key="project.open.time.87" value="1" />
-          <entry key="project.opened" value="57" />
+          <entry key="project.opened" value="58" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="68" />
+          <entry key="py" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="68" />
+          <entry key="Python" value="77" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="1" />
-          <entry key="py" value="42382" />
+          <entry key="py" value="43199" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="42382" />
+          <entry key="Python" value="43199" />
         </counts>
       </usages-collector>
     </session>
@@ -106,17 +106,12 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="604" column="75" selection-start-line="604" selection-start-column="75" selection-end-line="604" selection-end-column="75" />
+            <state relative-caret-position="315">
+              <caret line="406" column="8" selection-start-line="406" selection-start-column="8" selection-end-line="406" selection-end-column="8" />
               <folding>
-                <marker date="1554306110520" expanded="true" signature="2995:3657" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="3329:3657" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="5047:5113" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="10261:10353" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="10377:10382" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="11577:12157" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="11823:12157" ph="..." />
-                <marker date="1554306110520" expanded="true" signature="12061:12157" ph="..." />
+                <marker date="1554392338396" expanded="true" signature="11168:11187" ph="..." />
+                <marker date="1554392338396" expanded="true" signature="11292:11293" ph="..." />
+                <marker date="1554392338396" expanded="true" signature="11589:11595" ph="..." />
               </folding>
             </state>
           </provider>
@@ -139,7 +134,6 @@
       <list>
         <option value="$PROJECT_DIR$/notes/AsuzenaFA- Hangman.py" />
         <option value="$PROJECT_DIR$/notes/AsuzenaFA-Hangman.py" />
-        <option value="$PROJECT_DIR$/notes/Basic Python Notes #2.py" />
         <option value="$PROJECT_DIR$/AsuzenaFA-CSE Hangman2.py" />
         <option value="$PROJECT_DIR$/AsuzenaFA-Dictionary.py" />
         <option value="$PROJECT_DIR$/notes/dictionary_world_map-Asuzena FA.py" />
@@ -158,6 +152,7 @@
         <option value="$PROJECT_DIR$/Rooms.py" />
         <option value="$PROJECT_DIR$/Items.py" />
         <option value="$PROJECT_DIR$/AsuzenaFA-TBGame.py" />
+        <option value="$PROJECT_DIR$/notes/Basic Python Notes #2.py" />
         <option value="$PROJECT_DIR$/ObjectWorldMap.py" />
       </list>
     </option>
@@ -178,7 +173,25 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="CSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSE" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CSE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CSE" type="462c0819:PsiDirectoryNode" />
+              <item name="notes" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -205,28 +218,6 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.ObjectWorldMap">
-    <configuration name="AsuzenaFA-CSE Hangman" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CSE" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/AsuzenaFA-CSE Hangman.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="AsuzenaFA-Items" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="CSE" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -241,6 +232,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\rdq8\Documents\Github\CSE\Items.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Basic Python Notes #2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="CSE" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/notes" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/notes/Basic Python Notes #2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -339,19 +352,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.inheritacne" />
-      <item itemvalue="Python.AsuzenaFA-CSE Hangman" />
       <item itemvalue="Python.ObjectWorldMap" />
       <item itemvalue="Python.inheritance" />
       <item itemvalue="Python.AsuzenaFA-Items" />
       <item itemvalue="Python.Object Notes" />
+      <item itemvalue="Python.Basic Python Notes #2" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.ObjectWorldMap" />
+        <item itemvalue="Python.Basic Python Notes #2" />
         <item itemvalue="Python.Object Notes" />
         <item itemvalue="Python.AsuzenaFA-Items" />
         <item itemvalue="Python.inheritance" />
-        <item itemvalue="Python.AsuzenaFA-CSE Hangman" />
       </list>
     </recent_temporary>
   </component>
@@ -372,12 +385,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" weight="0.3698941" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.3623298" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.25037822" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -402,30 +415,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/notes/AsuzenaFA- Hangman.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/Basic Python Notes.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/AsuzenaFA-Hangman.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/notes/Basic Python Notes #2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/notes/Lucky 7's- Asuzena Flores.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-12" />
@@ -493,32 +482,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Player.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="42" selection-start-line="42" selection-end-line="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Rooms.py" />
     <entry file="file://$PROJECT_DIR$/AsuzenaFA-World map.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="327">
           <caret line="156" column="6" selection-start-line="156" selection-start-column="6" selection-end-line="156" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Characters.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AsuzenaFA-TBGame.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
         </state>
       </provider>
     </entry>
@@ -529,19 +497,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Basic Python Notes #2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="862">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/Basic Python Notes.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-15">
+          <caret line="99" lean-forward="true" selection-start-line="99" selection-end-line="99" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Player.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="354">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Characters.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/AsuzenaFA-Hangman.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="44" selection-start-line="6" selection-start-column="44" selection-end-line="6" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/notes/AsuzenaFA- Hangman.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AsuzenaFA-TBGame.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="70" selection-start-line="20" selection-start-column="70" selection-end-line="20" selection-end-column="70" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="604" column="75" selection-start-line="604" selection-start-column="75" selection-end-line="604" selection-end-column="75" />
+        <state relative-caret-position="315">
+          <caret line="406" column="8" selection-start-line="406" selection-start-column="8" selection-end-line="406" selection-end-column="8" />
           <folding>
-            <marker date="1554306110520" expanded="true" signature="2995:3657" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="3329:3657" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="5047:5113" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="10261:10353" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="10377:10382" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="11577:12157" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="11823:12157" ph="..." />
-            <marker date="1554306110520" expanded="true" signature="12061:12157" ph="..." />
+            <marker date="1554392338396" expanded="true" signature="11168:11187" ph="..." />
+            <marker date="1554392338396" expanded="true" signature="11292:11293" ph="..." />
+            <marker date="1554392338396" expanded="true" signature="11589:11595" ph="..." />
           </folding>
         </state>
       </provider>

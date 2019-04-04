@@ -1,5 +1,5 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, items=None, shop=None, character=None):
+    def __init__(self, name, north, south, east, west, description, character=None, items=None):
         if items is None:
             items = []
         self.name = name
@@ -7,10 +7,9 @@ class Room(object):
         self.south = south
         self.east = east
         self.west = west
-        self.shop = shop
         self.description = description
         self.character = character
-        self.items = []
+        self.items = items
 
 
 class Item(object):
@@ -20,7 +19,7 @@ class Item(object):
         self.equipped = False
 
 
-def pickup():
+def take():
     _found_item = None
     if player.current_location.items is not None:
         if player.current_location.items.name.lower() == found_item.lower():
@@ -71,7 +70,7 @@ class MammothTusk(WeirdStuff):
 
 class MTP1(WeirdStuff):
     def __init__(self):
-        super(MTP1, self).__init__("Tusk Part 1", "You Bought this 'Elephant Tusk' at a Merchants shop"
+        super(MTP1, self).__init__("Tusk Part 1", "You got this 'Elephant Tusk' at a Merchants shop"
                                                   ", it has the word 'Pro' carved in at the side")
 
 
@@ -250,18 +249,6 @@ class SmallHealth(Potion):
         self.healing_amt = 5
 
 
-class BigMana(Potion):
-    def __init__(self):
-        super(BigMana, self). __init__("Big Mana Potion", 10, 1, "Mana")
-        self.mana_amt = 10
-
-
-class SmallMana(Potion):
-    def __init__(self):
-        super(SmallMana, self).__init__("Small Mana Potion", 5, 1, "Mana")
-        self.mana_amt = 5
-
-
 class BigStamina(Potion):
     def __init__(self):
         super(BigStamina, self).__init__("Big Stamina Potion", 10, 1, "Stamina")
@@ -347,34 +334,6 @@ class PlasmaPumpShotgun(Guns):
         super(PlasmaPumpShotgun, self).__init__("Plasma Pump Shotgun", 1000, 2, 100)
 
 
-class Shops(Item):
-    def __init__(self, name, character=None):
-        super(Shops, self).__init__(name, condition=None)
-        self.name = name
-        self.character = character
-        self.stuff = []
-
-
-class MerchantsShop(Shops):
-    def __init__(self):
-        super(MerchantsShop, self).__init__("Merchant's Shop", Merchant)
-
-
-class BlacksmithShop(Shops):
-    def __init__(self):
-        super(BlacksmithShop, self).__init__("Blacksmith's Shop", BlackSmith)
-
-
-class DoctorsHT(Shops):
-    def __init__(self):
-        super(DoctorsHT, self).__init__("Doctor's Healing Tree", Doctor)
-
-
-class MutesTavern(Shops):
-    def __init__(self):
-        super(MutesTavern, self).__init__("Mute's Tavern", Mute)
-
-
 class Character(object):
     def __init__(self, name, health, weapon, armor):
         self.talk = False
@@ -437,6 +396,22 @@ class Thief3(Character):
         super(Thief3, self).__init__("Tres", 90, Dagger, ThiefArmor)
 
 
+class Shops(object):
+    def __init__(self, name):
+        self.name = name
+
+
+class BSS(Shops):
+    def __init__(self):
+        super(BSS, self).__init__("Iron's Shop")
+        self.storage = []
+
+    def ask(self):
+        print("Hey welcome to %s , what would you like to buy." % self.name)
+        command = input(">_")
+
+
+
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
@@ -465,8 +440,6 @@ Leather_Armor = LeatherArmor()
 
 Big_Health = BigHealth()
 Small_Health = SmallHealth()
-Big_Mana = BigMana()
-Small_Mana = SmallMana()
 Big_Stamina = BigStamina()
 Small_Stamina = SmallStamina()
 
@@ -493,13 +466,8 @@ Character = Mute()
 Character2 = Doctor()
 Character3 = Merchant()
 Character4 = BlackSmith()
-# Shops
-
-Mutes_Tavern = MutesTavern()
-Black_Smith_Shop = BlacksmithShop()
-Doctors_HT = DoctorsHT()
-Merchants_Shop = MerchantsShop()
 # Rooms
+
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
              "it has two exits one to the east and one to the west", [Long_Sword])
@@ -559,7 +527,7 @@ WastelandE = Room("The Wasteland Entrance", 'FOW', 'Tar_Pit', None, 'Rope_Bridge
 
 FOW = Room("Evergreen Road", 'MOW', 'WastelandE', None, None,
            "You walk into the place and you are walking down a road..."
-           "You are surrounded but 3 thieves", [], None,)
+           "You are surrounded but 3 thieves", [])
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -568,11 +536,11 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked bya nurse, the doctor "
-          "comes up to you", [], Doctor, Doctors_HT)
+          "comes up to you", Doctor)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
                 "You enter the creepy Item Shop, you see many useless items"
-                " sword with weird carvings", [MTP1], Merchant, Merchants_Shop)
+                " sword with weird carvings", )
 
 BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
           "You walk more in to the and see a tavern to the north, a blacksmith to the south,"
@@ -580,11 +548,11 @@ BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
 
 Tavern = Room("Mute's Tavern", None, BV, None, None,
               "You walk into the tavern and sit at the bar, "
-              "there is a bartender serving other people", [], Mute, Mutes_Tavern)
+              "there is a bartender serving other people", Mute)
 
 Blacksmith = Room("Jacks Weapons and Armory", None, 'BV', None, None,
                   "You walk up to the workshop and see a man working on "
-                  "a sword", [], BlackSmith, Black_Smith_Shop)
+                  "a sword", BlackSmith, [])
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
@@ -595,23 +563,23 @@ player.weapon = Dagger
 
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
-PlayerActions = ['give', 'talk', 'pick up', 'drop']
+PlayerActions = ['give', 'talk', 'take', 'drop', 'buy']
 
 while playing:
     print(player.current_location.name)
     print(player.current_location.description)
     print()
     if player.current_location.items is not None:
-        print("There is a %s in here" % player.current_location.items.index)
+        print("There is a %s in here" % player.current_location.items)
     else:
         print("There is nothing in this room")
 
     command = input(">_")
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif "pickup" in command:
-        found_item = command[7:]
-        pickup()
+    elif "take" in command:
+        found_item = command[5:]
+        take()
     elif command.lower() in directions:
         try:
             room_name = getattr(player.current_location, command)
