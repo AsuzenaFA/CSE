@@ -384,16 +384,23 @@ class Doctor(Character):
 class Thief1(Character):
     def __init__(self):
         super(Thief1, self).__init__("Uno", 90, Dagger, ThiefArmor)
+        print(self.name)
+        print("Hey what are you doing in here")
 
 
 class Thief2(Character):
     def __init__(self):
         super(Thief2, self).__init__("Dos", 90, Dagger, ThiefArmor)
+        print(self.name)
+        print("Yah your and outsider. This place isn't for you"
+              " are you lost")
 
 
 class Thief3(Character):
     def __init__(self):
         super(Thief3, self).__init__("Tres", 90, Dagger, ThiefArmor)
+        print(self.name)
+        print("...")
 
 
 class Shops(object):
@@ -409,6 +416,18 @@ class BSS(Shops):
     def ask(self):
         print("Hey welcome to %s , what would you like to buy." % self.name)
         command = input(">_")
+        if command in ['buy', 'trade']:
+            print("This is what we have: ")
+            for item in self.storage:
+                print(self.storage[item]["Name"] + "-" + str(self.storage[item]["Cost"] + "$"))
+            request = input("I want to buy a > ")
+            for i, thing in enumerate(self.storage.keys()):
+                if self.storage[thing]["Name"] == request:
+                    customer_i = input("Do you want to but the %s " % self.storage[thing]["Name"])
+                    if customer_i in ['yes']:
+                        if player.money >= self.storage[thing]["Cost"]:
+                            
+
 
 
 
