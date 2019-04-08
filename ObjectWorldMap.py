@@ -1,5 +1,5 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, character=None, items=None):
+    def __init__(self, name, north, south, east, west, description, character=None, enemy=None,items=None):
         if items is None:
             items = []
         self.name = name
@@ -10,6 +10,7 @@ class Room(object):
         self.description = description
         self.character = character
         self.items = items
+        self.enemy = enemy
 
 
 class Item(object):
@@ -411,12 +412,12 @@ class Shops(object):
 class BSS(Shops):
     def __init__(self):
         super(BSS, self).__init__("Iron's Shop")
-        self.storage = []
+        self.storage = {}
 
     def ask(self):
         print("Hey welcome to %s , what would you like to buy." % self.name)
-        command = input(">_")
-        if command in ['buy', 'trade']:
+        _command_ = input(">_")
+        if command in ['buy']:
             print("This is what we have: ")
             for item in self.storage:
                 print(self.storage[item]["Name"] + "-" + str(self.storage[item]["Cost"] + "$"))
@@ -426,9 +427,49 @@ class BSS(Shops):
                     customer_i = input("Do you want to but the %s " % self.storage[thing]["Name"])
                     if customer_i in ['yes']:
                         if player.money >= self.storage[thing]["Cost"]:
-                            
+                            print("You bought and item for %d coins" % self.storage[thing]["Cost"])
+                            print("You have %d coins left" % player.money)
+                            player.inventory.append(self.storage[thing]["ID"])
+                        elif player.money < self.storage[thing]["Cost"]:
+                            if player.money <= 0:
+                                print("You have no money")
+                            else:
+                                print("You only have %d on you" % player.money)
+                                self.ask()
 
 
+class BlackSmithShop(Shops):
+    def __init__(self):
+        super(BlackSmithShop, self).__init__("Coppers Blacksmith")
+        self.storage = {
+            "stock1": {
+                "Name": Battle_Axe.name,
+                "Cost": 10,
+                "ID": BattleAxe
+            },
+            "stock2": {
+                "Name": Viking_Sword.name,
+                "Cost": 10
+            },
+            "stock3": {
+                "Name": Long_Sword.name,
+                "Cost": 5
+            },
+            "stock4": {
+                "Name": Katana.name,
+                "Cost": 9
+            }
+
+
+        }
+
+
+class MerchantShop(Shops):
+    def __init__(self):
+        super(MerchantShop, self).__init__("Clerk's Stuff and More")
+        self.storage = {
+            "stock1"
+        }
 
 
 class Player(object):
@@ -495,16 +536,12 @@ Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest'
                 "You look around and there is a hatchet in a log and there is"
                 " forest to the west, north, and a water fountain to the south.", [Hatchet])
 
-NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'Desert',
+NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', None,
           "Your in a quiet forest and you hear grass hoppers to the north")
 
-WF = Room("Western Forest", 'Grass Trail', 'Pond', 'Spawn', 'Desert',
+WF = Room("Western Forest", 'Grass Trail', 'Pond', 'Spawn', None,
           "You in what once was a forest but is now a bunch of stumps and you hear"
           "frogs to the south")
-
-Desert = Room("Desert", None, None, None, 'D1',
-              "You walked into a desert and don't know where you are, suddenly stone"
-              " walls rise up from the ground, you are now in a maze")
 
 EF = Room("Eastern Forest", 'Trench', 'Swamp', 'BB', 'Water_Fountain',
           "Your in a forest and hear a bubbling noise to the east")
@@ -582,6 +619,7 @@ player.weapon = Dagger
 
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
+short_directions = ['n', 's', 'e', 'w', 'u', 'd']
 PlayerActions = ['give', 'talk', 'take', 'drop', 'buy']
 
 while playing:
@@ -594,6 +632,11 @@ while playing:
         print("There is nothing in this room")
 
     command = input(">_")
+
+    if command in short_directions:
+        pos = short_directions.index(command.lower())
+        command = directions[pos]
+
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
     elif "take" in command:
