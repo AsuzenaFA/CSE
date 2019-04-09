@@ -1,7 +1,5 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, character=None, enemy=None,items=None):
-        if items is None:
-            items = []
+    def __init__(self, name, north, south, east, west, description, character=None, enemy=None, items=None, shop=None):
         self.name = name
         self.north = north
         self.south = south
@@ -11,6 +9,7 @@ class Room(object):
         self.character = character
         self.items = items
         self.enemy = enemy
+        self.shop = shop
 
 
 class Item(object):
@@ -335,6 +334,28 @@ class PlasmaPumpShotgun(Guns):
         super(PlasmaPumpShotgun, self).__init__("Plasma Pump Shotgun", 1000, 2, 100)
 
 
+class Scrolls(Item):
+    def __init__(self, name, quests):
+        super(Scrolls, self).__init__(name, condition=None)
+        self.name = name
+        self.quests = quests
+
+    def read(self):
+        print(self.name)
+        print("---The scroll says---")
+        print(self.quests)
+
+
+class Scroll1(Scrolls):
+    def __init__(self):
+        super(Scroll1, self).__init__("The Bear Skin", "Go to the Wastelands and find Rat Kings Bear Coat.")
+
+
+class Scroll2(Scrolls):
+    def __init__(self):
+        super(Scroll2, self).__init__("The tusk", "Find all the mammoth tusk parts and return it to the owner.")
+
+
 class Character(object):
     def __init__(self, name, health, weapon, armor):
         self.talk = False
@@ -468,7 +489,64 @@ class MerchantShop(Shops):
     def __init__(self):
         super(MerchantShop, self).__init__("Clerk's Stuff and More")
         self.storage = {
-            "stock1"
+            "stock1": {
+                "Name": MTP1.name,
+                "Cost": 0
+            },
+            "stock2": {
+                "Name": Big_Health.name,
+                "Cost": 2
+            },
+            "stock3": {
+                "Name": Small_Health.name,
+                "Cost": 1
+            },
+            "stock5": {
+                "Name": Big_Stamina.name,
+                "Cost": 2
+            },
+            "stock6": {
+                "Name": Small_Stamina,
+                "Cost": 1
+            }
+        }
+
+
+class Doctors(Shops):
+    def __init__(self):
+        super(Doctors, self).__init__("Dr. Stones Clinic")
+        self.storage = {
+            "stock1": {
+                "Name": Big_Health.name,
+                "Cost": 100
+            },
+            "stock2": {
+                "Name": Small_Health.name,
+                "Cost": 50
+            },
+            "stock3": {
+                "Name": Big_Stamina.name,
+                "Cost": 100
+            },
+            "stock4": {
+                "Name": Small_Stamina.name,
+                "Cost": 50
+            }
+        }
+
+
+class MutesObjectives(Shops):
+    def __init__(self):
+        super(MutesObjectives, self).__init__("Mutes Tavern")
+        self.storage = {
+            "stock": {
+                "Name": Scroll_1.name,
+                "Cost": 1
+            },
+            "stock2": {
+                "Name": Scroll_2.name,
+                "Cost": 1
+            },
         }
 
 
@@ -521,6 +599,10 @@ MTP2 = MTP2()
 MTP3 = MTP3()
 Mammoth_Tusk = MammothTusk()
 
+# Scrolls
+Scroll_1 = Scroll1()
+Scroll_2 = Scroll2()
+
 # Characters
 Character = Mute()
 Character2 = Doctor()
@@ -530,11 +612,11 @@ Character4 = BlackSmith()
 
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west", [Long_Sword])
+             "it has two exits one to the east and one to the west", None, None, Long_Sword)
 
 Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
                 "You look around and there is a hatchet in a log and there is"
-                " forest to the west, north, and a water fountain to the south.", [Hatchet])
+                " forest to the west, north, and a water fountain to the south.", None, None, [Hatchet])
 
 NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', None,
           "Your in a quiet forest and you hear grass hoppers to the north")
@@ -566,7 +648,7 @@ BB = Room("Broken Bridge", 'Trench', 'FT', None, 'EF',
 FT = Room("Fallen Tree", 'BB', None, 'Tar_Pit', 'Swamp',
           "You are at the Fallen Tree, it looks like someone had put it there,"
           " it looks stable and you can go over it, there is also a huge wall "
-          "to the south the you cant climb", [Battle_Axe])
+          "to the south the you cant climb", None, None, [Battle_Axe])
 
 Tar_Pit = Room("Tar Pit", 'Wasteland', 'Revine', None, 'FT',
                "Your at a tar pit a bit away from the tar river, you see something sticking out of the pit",
@@ -575,15 +657,15 @@ Tar_Pit = Room("Tar Pit", 'Wasteland', 'Revine', None, 'FT',
 Revine = Room("Wyvern's Cave", 'Tar_Pit', None, None, None,
               "You wonder into a revine, its very hot, you see a sliver "
               "of light in the wall and you walk towards it..."
-              "When you reach the other side you are surrounded by wyverns", [Pink_Egg])
+              "When you reach the other side you are surrounded by wyverns", None, None, [Pink_Egg])
 
 WastelandE = Room("The Wasteland Entrance", 'FOW', 'Tar_Pit', None, 'Rope_Bridge',
                   "You are at the front of what looks like a run down city. The entence is a broken fence "
-                  "and you cna go in, but there is a weird fuzzy thing stuck in the fence", [Black_Bear_Skin])
+                  "and you cna go in, but there is a weird fuzzy thing stuck in the fence", None, None, [Black_Bear_Skin])
 
 FOW = Room("Evergreen Road", 'MOW', 'WastelandE', None, None,
            "You walk into the place and you are walking down a road..."
-           "You are surrounded but 3 thieves", [])
+           "You are surrounded but 3 thieves")
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -592,11 +674,11 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked bya nurse, the doctor "
-          "comes up to you", Doctor)
+          "comes up to you", Doctor, None, None, Doctors)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
                 "You enter the creepy Item Shop, you see many useless items"
-                " sword with weird carvings", )
+                " sword with weird carvings", Merchant, None, None, MerchantShop)
 
 BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
           "You walk more in to the and see a tavern to the north, a blacksmith to the south,"
@@ -604,11 +686,11 @@ BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', None,
 
 Tavern = Room("Mute's Tavern", None, BV, None, None,
               "You walk into the tavern and sit at the bar, "
-              "there is a bartender serving other people", Mute)
+              "there is a bartender serving other people", Mute, None, None,)
 
 Blacksmith = Room("Jacks Weapons and Armory", None, 'BV', None, None,
                   "You walk up to the workshop and see a man working on "
-                  "a sword", BlackSmith, [])
+                  "a sword", BlackSmith, None, None, BlackSmithShop)
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 
@@ -627,7 +709,7 @@ while playing:
     print(player.current_location.description)
     print()
     if player.current_location.items is not None:
-        print("There is a %s in here" % player.current_location.items)
+        print("There is a %s in here" % player.current_location.items.name)
     else:
         print("There is nothing in this room")
 
@@ -639,8 +721,8 @@ while playing:
 
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif "take" in command:
-        found_item = command[5:]
+    elif "take " in command:
+        found_item = command[7:]
         take()
     elif command.lower() in directions:
         try:
