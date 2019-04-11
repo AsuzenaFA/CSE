@@ -19,33 +19,6 @@ class Item(object):
         self.equipped = False
 
 
-def take():
-    _found_item = None
-    if player.current_location.items is not None:
-        if player.current_location.items.name.lower() == found_item.lower():
-            _items_found = player.current_location.items
-    if isinstance(found_item, Item):
-        print("You picked up " + _found_item.name)
-        player.inventory.append(found_item)
-        player.current_location.item = None
-
-
-def drop():
-    _found_item = None
-    for item in player.inventory:
-        if item.name.lower() == _found_item.lower():
-            _found_item = item
-            print("You dropped the item %s" % item.name)
-    if found_item is not None:
-        if player.current_location.item is None:
-            player.current_location.item = found_item
-            player.inventory.remove(found_item)
-        else:
-            print("That item is already in there.")
-    else:
-        print("You don't have this item.")
-
-
 class WeirdStuff(Item):
     def __init__(self, name, description):
         super(WeirdStuff, self).__init__(name, condition=None)
@@ -722,9 +695,36 @@ while playing:
 
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif "take " in command:
+    elif 'take ' in command:
         found_item = command[5:]
-        take()
+        _items_found = None
+        if player.current_location.items is not None:
+            if player.current_location.items.name.lower() == found_item.lower():
+                _items_found = player.current_location.items
+        if isinstance(_items_found, Item):
+            print("You picked it up")
+            player.inventory.append(_items_found)
+            player.current_location.items = None
+
+    elif 'drop' in command:
+        lose_item = command[5:]
+        _items_found = None
+        for items in player.inventory:
+            if items.name.lower() == lose_item.lower():
+                _found_item = items
+                print("You dropped the item %s" % items.name)
+        if _items_found is not None:
+            if player.current_location.items is None:
+                player.current_location.items = lose_item
+                player.inventory.remove(_items_found)
+            else:
+                print("That item is already in there.")
+        else:
+            print("You don't have this item.")
+        if isinstance(_items_found, Item):
+            player.current_location.append(_items_found)
+
+
     elif command.lower() in directions:
         try:
             room_name = getattr(player.current_location, command)
