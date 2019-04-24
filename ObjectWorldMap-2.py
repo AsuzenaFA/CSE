@@ -1,5 +1,5 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, character=None, enemy=None, items=None, shop=None):
+    def __init__(self, name, north, south, east, west, description, character=None, enemy=None, items=None):
         self.name = name
         self.north = north
         self.south = south
@@ -9,7 +9,6 @@ class Room(object):
         self.character = character
         self.items = items
         self.enemy = enemy
-        self.shop = shop
 
 
 class Item(object):
@@ -88,7 +87,6 @@ class Sword(Item):
         self.equipped = False
         self.damage = damage
         self.stamina = Character
-        self.target = Enemy
 
     def grip(self):
         self.equipped = True
@@ -112,43 +110,6 @@ class Sword(Item):
         print("You put the sword away")
 
 
-class Enemy(object):
-    def __init__(self, attack):
-        self.stamina = 100
-        self.attack = attack
-        self.health = 100
-
-    def turn(self):
-        self.stamina -= 10
-        if self.turn == 0:
-            self.attack = 0
-
-
-class Ogre(Enemy):
-    def __init__(self):
-        super(Ogre, self).__init__(5)
-
-
-class GiantToads(Enemy):
-    def __init__(self):
-        super(GiantToads, self).__init__(3)
-
-
-class Moles(Enemy):
-    def __init__(self):
-        super(Moles, self).__init__(4)
-
-
-class Rats(Enemy):
-    def __init__(self):
-        super(Rats, self).__init__(6)
-
-
-class Roach(Enemy):
-    def __init__(self):
-        super(Roach, self).__init__(4)
-
-
 class BroadSword(Sword):
     def __init__(self):
         super(BroadSword, self).__init__("Broad Sword", 100, 30)
@@ -156,17 +117,17 @@ class BroadSword(Sword):
 
 class Dagger(Sword):
     def __init__(self):
-        super(Dagger, self).__init__("Thief's Dagger", 50, 10)
+        super(Dagger, self).__init__("Tres's Dagger", 50, 10)
 
 
 class Katana(Sword):
     def __init__(self):
-        super(Katana, self).__init__("Katana", 80, 18)
+        super(Katana, self).__init__("Levy's Katana", 80, 18)
 
 
 class VikingSword(Sword):
     def __init__(self):
-        super(VikingSword, self).__init__("Viking Sword", 100, 20)
+        super(VikingSword, self).__init__("Token's Sword", 100, 20)
 
 
 class LongSword(Sword):
@@ -273,11 +234,6 @@ class IronArmor(Armor):
         super(IronArmor, self).__init__("Iron Armor", "Iron", 1000, 50)
 
 
-class ThiefArmor(Armor):
-    def __init__(self):
-        super(ThiefArmor, self).__init__("Thief", "Thief", 300, 20)
-
-
 class DragonArmor(Armor):
     def __init__(self):
         super(DragonArmor, self).__init__("Dragon Scale Armor", "Scales", 5000, 40)
@@ -285,7 +241,7 @@ class DragonArmor(Armor):
 
 class AncientArmor(Armor):
     def __init__(self):
-        super(AncientArmor, self).__init__("Ancient Armor", "old", 200, 10)
+        super(AncientArmor, self).__init__("Ancient Armor", "old", 100000, 20)
 
 
 class BarrierPendant(Armor):
@@ -364,19 +320,23 @@ class Mute(Character):
     def __init__(self):
         super(Mute, self).__init__("Mute", 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
         if self.talk:
-            print("...")
+            print("Hey your new here, do you mind doin me a favor and take this letter to the "
+                  "group of people that live in a treehouse, they're in the north-western part of the land.")
 
 
 class Merchant(Character):
     def __init__(self):
         super(Merchant, self).__init__("Token Coin", 99999999999999999, LongSword, BarrierPendant)
         if self.talk:
-            print("Hey, what would you like to buy.")
+            print("Hey new comer welcome to my shop, oh you have that mark on your neck, well i guess you can"
+                  " take what ever you like... the thing here aren't that useful.")
 
 
 class BlackSmith(Character):
     def __init__(self):
         super(BlackSmith, self).__init__("Ronald Iron", 9999999999999999, BattleAxe, BarrierPendant)
+        if self.talk:
+            print("...")
 
 
 class Doctor(Character):
@@ -388,14 +348,14 @@ class Doctor(Character):
 
 class Thief1(Character):
     def __init__(self):
-        super(Thief1, self).__init__("Uno", 90, Dagger, ThiefArmor)
+        super(Thief1, self).__init__("Uno", 90, Dagger, None)
         print(self.name)
         print("Hey what are you doing in here")
 
 
 class Thief2(Character):
     def __init__(self):
-        super(Thief2, self).__init__("Dos", 90, Dagger, ThiefArmor)
+        super(Thief2, self).__init__("Dos", 90, Dagger, None)
         print(self.name)
         print("Yah your and outsider. This place isn't for you"
               " are you lost")
@@ -403,134 +363,9 @@ class Thief2(Character):
 
 class Thief3(Character):
     def __init__(self):
-        super(Thief3, self).__init__("Tres", 90, Dagger, ThiefArmor)
+        super(Thief3, self).__init__("Tres", 90, Dagger, None)
         print(self.name)
         print("...")
-
-
-class Shops(object):
-    def __init__(self, name):
-        self.name = name
-
-
-class BSS(Shops):
-    def __init__(self):
-        super(BSS, self).__init__("Iron's Shop")
-        self.storage = {}
-
-    def ask(self):
-        print("Hey welcome to %s , what would you like to buy." % self.name)
-        _command_ = input(">_")
-        if command in ['buy']:
-            print("This is what we have: ")
-            for item in self.storage:
-                print(self.storage[item]["Name"] + "-" + str(self.storage[item]["Cost"] + "$"))
-            request = input("I want to buy a > ")
-            for i, thing in enumerate(self.storage.keys()):
-                if self.storage[thing]["Name"] == request:
-                    customer_i = input("Do you want to but the %s " % self.storage[thing]["Name"])
-                    if customer_i in ['yes']:
-                        if player.money >= self.storage[thing]["Cost"]:
-                            print("You bought and item for %d coins" % self.storage[thing]["Cost"])
-                            print("You have %d coins left" % player.money)
-                            player.inventory.append(self.storage[thing]["ID"])
-                        elif player.money < self.storage[thing]["Cost"]:
-                            if player.money <= 0:
-                                print("You have no money")
-                            else:
-                                print("You only have %d on you" % player.money)
-                                self.ask()
-
-
-class BlackSmithShop(Shops):
-    def __init__(self):
-        super(BlackSmithShop, self).__init__("Coppers Blacksmith")
-        self.storage = {
-            "stock1": {
-                "Name": Battle_Axe.name,
-                "Cost": 10,
-                "ID": BattleAxe
-            },
-            "stock2": {
-                "Name": Viking_Sword.name,
-                "Cost": 10
-            },
-            "stock3": {
-                "Name": Long_Sword.name,
-                "Cost": 5
-            },
-            "stock4": {
-                "Name": Katana.name,
-                "Cost": 9
-            }
-
-
-        }
-
-
-class MerchantShop(Shops):
-    def __init__(self):
-        super(MerchantShop, self).__init__("Clerk's Stuff and More")
-        self.storage = {
-            "stock1": {
-                "Name": MTP1.name,
-                "Cost": 0
-            },
-            "stock2": {
-                "Name": Big_Health.name,
-                "Cost": 2
-            },
-            "stock3": {
-                "Name": Small_Health.name,
-                "Cost": 1
-            },
-            "stock5": {
-                "Name": Big_Stamina.name,
-                "Cost": 2
-            },
-            "stock6": {
-                "Name": Small_Stamina,
-                "Cost": 1
-            }
-        }
-
-
-class Doctors(Shops):
-    def __init__(self):
-        super(Doctors, self).__init__("Dr. Stones Clinic")
-        self.storage = {
-            "stock1": {
-                "Name": Big_Health.name,
-                "Cost": 100
-            },
-            "stock2": {
-                "Name": Small_Health.name,
-                "Cost": 50
-            },
-            "stock3": {
-                "Name": Big_Stamina.name,
-                "Cost": 100
-            },
-            "stock4": {
-                "Name": Small_Stamina.name,
-                "Cost": 50
-            }
-        }
-
-
-class MutesObjectives(Shops):
-    def __init__(self):
-        super(MutesObjectives, self).__init__("Mutes Tavern")
-        self.storage = {
-            "stock": {
-                "Name": Scroll_1.name,
-                "Cost": 1
-            },
-            "stock2": {
-                "Name": Scroll_2.name,
-                "Cost": 1
-            },
-        }
 
 
 class Player(object):
@@ -539,10 +374,7 @@ class Player(object):
         self.current_location = starting_location
         self.inventory = []
         self.damage = 5
-        self.stamina = 100
         self.money = 100
-        self.manna = 100
-        self.weapon = None
 
     def move(self, new_location):
         """This method moves a character to a new location
@@ -555,7 +387,6 @@ class Player(object):
 # Instantiate Items
 Dragon_Armor = DragonArmor()
 Ancient_Armor = AncientArmor()
-Thief_Armor = ThiefArmor()
 Iron_Armor = IronArmor()
 Leather_Armor = LeatherArmor()
 
@@ -611,7 +442,8 @@ WF = Room("Western Forest", 'NF', 'SF', 'Backyard', 'Creek',
           "frogs to the south")
 
 Creek = Room("Creek", 'FBL', 'Dense_Forest', 'WF', None,
-             "You are at a creek on  east side of the"                                    "land.", None, None, [Katana])
+             "You are at a creek on  east side of the"
+             "land.", None, None, [Katana])
 
 EF = Room("Eastern Forest", 'NF', 'SF', 'Tar_River', None,
           "Your in a forest and hear a bubbling noise to the east")
@@ -658,7 +490,7 @@ WNest = Room("Wyvern Nest", None, None, None, 'WDen',
              "The Wyverns have let you past them and you are now in the nest", None, None, [Pink_Egg])
 
 WastelandE = Room("The Wasteland Entrance", 'FOW', 'Tar_Pit', None, 'Rope_Bridge',
-                  "You are at the front of what looks like a run down city. The entence is a broken fence "
+                  "You are at the front of what looks like a run down city. The entrance is a broken fence "
                   "and you cna go in, but there is a weird fuzzy thing stuck in the fence", None, None,
                   [Black_Bear_Skin])
 
@@ -667,7 +499,7 @@ FOW = Room("Evergreen Road", None, 'WastelandE', 'RTHouse', None,
            "You are surrounded but 3 thieves")
 
 RTHouse = Room("Rat King's house", None, None, None, 'FOW',
-               "You are inside Rat King's house, You souldnt take anything,")
+               "You are inside Rat King's house, You shouldn't take anything,")
 
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
@@ -676,11 +508,11 @@ Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked bya nurse, the doctor "
-          "comes up to you", Doctor, None, None, Doctors)
+          "comes up to you", Doctor)
 
 Merchant = Room("Clerk's Items and More", 'Gates', None, None, None,
                 "You enter the creepy Item Shop, you see many useless items"
-                " sword with weird carvings", Merchant, None, None, MerchantShop)
+                " sword with weird carvings", Merchant, )
 
 BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', 'Gates',
           "You walk more in to the and see a tavern to the north, a blacksmith to the south,"
@@ -688,11 +520,11 @@ BV = Room("Back of Village", 'Blacksmith', 'Tavern', 'Kings_Castle', 'Gates',
 
 Tavern = Room("Mute's Tavern", 'BV', None, None, None,
               "You walk into the tavern and sit at the bar, "
-              "there is a bartender serving other people", Mute, None, None, )
+              "there is a bartender serving other people", Mute)
 
 Blacksmith = Room("Jacks Weapons and Armory", None, 'BV', None, None,
                   "You walk up to the workshop and see a man working on "
-                  "a sword", BlackSmith, None, None, BlackSmithShop)
+                  "a sword", BlackSmith)
 
 Kings_Castle = Room("Castle", None, None, None, 'BV', "The Room is empty but you see a hole in the floor")
 # Players
@@ -702,7 +534,7 @@ player.weapon = Dagger
 playing = True
 directions = ['north', 'south', 'east', 'west', 'up', 'down']
 short_directions = ['n', 's', 'e', 'w', 'u', 'd']
-PlayerActions = ['give', 'talk', 'take', 'drop', 'buy']
+PlayerActions = ['talk', 'take', 'drop']
 
 while playing:
     print(player.current_location.name)
@@ -748,13 +580,22 @@ while playing:
                 print("That item is already in there.")
         else:
             print("You don't have this item.")
+    elif 'talk' in command:
+        talk = command[5:]
+        for Character in player.current_location:
+            if Character.name.lower() == talk.lower():
+                Character.talk = True
+                print(Character.talk)
 
     elif 'give' in command:
         lose_item = command[5:]
         _items_found = None
         for items in player.inventory:
             if items.name.lower() == lose_item.lower():
-                player.inventory.remove(_items_found)
+                _items_found = items
+        if Character in player.inventory:
+            player.inventory.remove(_items_found)
+            print("You gave %s to %s" % _items_found.name, player.current_location.Character.name)
 
     elif command.lower() in directions:
         try:
