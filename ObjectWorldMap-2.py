@@ -296,7 +296,7 @@ class Scroll2(Scrolls):
 
 
 class Character(object):
-    def __init__(self, name, health, weapon, armor):
+    def __init__(self, name, health, weapon, armor, inventory=[]):
         self.talk = False
         self.health = health
         self.weapon = weapon
@@ -304,6 +304,7 @@ class Character(object):
         self.give = False
         self.charge = False
         self.name = name
+        self.inventory = inventory
 
     def take_damage(self, damage):
         self.health -= damage
@@ -580,7 +581,7 @@ while playing:
                 print("That item is already in there.")
         else:
             print("You don't have this item.")
-    elif 'talk' in command:
+    elif 'talk to ' in command:
         talk = command[5:]
         for Character in player.current_location:
             if Character.name.lower() == talk.lower():
@@ -588,14 +589,10 @@ while playing:
                 print(Character.talk)
 
     elif 'give' in command:
-        lose_item = command[5:]
-        _items_found = None
+        give_item = command[5:]
         for items in player.inventory:
-            if items.name.lower() == lose_item.lower():
-                _items_found = items
-        if Character in player.inventory:
-            player.inventory.remove(_items_found)
-            print("You gave %s to %s" % _items_found.name, player.current_location.Character.name)
+            if items.name.lower() == give_item.lower():
+                
 
     elif command.lower() in directions:
         try:

@@ -39,86 +39,13 @@
     <expand />
     <select />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-2014428206">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="64" />
-          <entry key="project.open.time.101" value="1" />
-          <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.19" value="1" />
-          <entry key="project.open.time.29" value="1" />
-          <entry key="project.open.time.34" value="1" />
-          <entry key="project.open.time.36" value="6" />
-          <entry key="project.open.time.37" value="3" />
-          <entry key="project.open.time.38" value="3" />
-          <entry key="project.open.time.39" value="3" />
-          <entry key="project.open.time.40" value="1" />
-          <entry key="project.open.time.41" value="2" />
-          <entry key="project.open.time.42" value="1" />
-          <entry key="project.open.time.43" value="1" />
-          <entry key="project.open.time.46" value="1" />
-          <entry key="project.open.time.47" value="2" />
-          <entry key="project.open.time.49" value="1" />
-          <entry key="project.open.time.50" value="1" />
-          <entry key="project.open.time.51" value="2" />
-          <entry key="project.open.time.53" value="3" />
-          <entry key="project.open.time.55" value="1" />
-          <entry key="project.open.time.56" value="2" />
-          <entry key="project.open.time.57" value="1" />
-          <entry key="project.open.time.58" value="3" />
-          <entry key="project.open.time.59" value="3" />
-          <entry key="project.open.time.61" value="3" />
-          <entry key="project.open.time.62" value="1" />
-          <entry key="project.open.time.63" value="4" />
-          <entry key="project.open.time.64" value="2" />
-          <entry key="project.open.time.65" value="1" />
-          <entry key="project.open.time.66" value="2" />
-          <entry key="project.open.time.67" value="2" />
-          <entry key="project.open.time.68" value="1" />
-          <entry key="project.open.time.75" value="1" />
-          <entry key="project.open.time.76" value="1" />
-          <entry key="project.open.time.79" value="2" />
-          <entry key="project.open.time.87" value="1" />
-          <entry key="project.opened" value="66" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="csv" value="2" />
-          <entry key="py" value="80" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="80" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="dummy" value="1" />
-          <entry key="py" value="48309" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="48309" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ObjectWorldMap-2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="584" selection-start-line="584" selection-end-line="584" />
-              <folding>
-                <marker date="1556120367365" expanded="true" signature="539:542" ph="..." />
-              </folding>
+            <state relative-caret-position="671">
+              <caret line="594" column="16" lean-forward="true" selection-start-line="594" selection-start-column="16" selection-end-line="594" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -126,7 +53,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Book1.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-72521">
+            <state relative-caret-position="6784615">
               <caret line="399095" selection-start-line="399095" selection-end-line="399095" />
             </state>
           </provider>
@@ -135,8 +62,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/More Notes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -188,13 +115,7 @@
       </list>
     </option>
   </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1382" />
@@ -205,31 +126,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
-              <item name="CSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSE" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="CSE" type="b2602c69:ProjectViewProjectNode" />
-              <item name="CSE" type="462c0819:PsiDirectoryNode" />
-              <item name="notes" type="462c0819:PsiDirectoryNode" />
+              <item name="GitHub" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GitHub" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -412,14 +330,18 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1546962992227</updated>
+      <workItem from="1556206519009" duration="509000" />
     </task>
     <servers />
   </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="509000" />
+  </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.36762482" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.37153518" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.25037822" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -467,9 +389,6 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/notes/Lucky 7's- Asuzena Flores.py">
@@ -565,37 +484,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-          <folding>
-            <marker date="1554908500978" expanded="true" signature="9800:9940" ph="..." />
-            <marker date="1554908500978" expanded="true" signature="11138:11140" ph="..." />
-            <marker date="1554908500978" expanded="true" signature="14814:14819" ph="..." />
-            <marker date="1554908500978" expanded="true" signature="15367:15730" ph="..." />
-            <marker date="1554908500978" expanded="true" signature="15399:15730" ph="..." />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ObjectWorldMap-2.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="671">
+          <caret line="594" column="16" lean-forward="true" selection-start-line="594" selection-start-column="16" selection-end-line="594" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Book1.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72521">
+        <state relative-caret-position="6784615">
           <caret line="399095" selection-start-line="399095" selection-end-line="399095" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/More Notes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ObjectWorldMap-2.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="584" selection-start-line="584" selection-end-line="584" />
-          <folding>
-            <marker date="1556120367365" expanded="true" signature="539:542" ph="..." />
-          </folding>
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
