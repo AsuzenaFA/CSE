@@ -1,14 +1,13 @@
 class Room(object):
-    def __init__(self, name, north, south, east, west, description, character=None, enemy=None, items=None):
+    def __init__(self, name, north, south, east, west, description, character=None, items=None):
         self.name = name
         self.north = north
         self.south = south
         self.east = east
         self.west = west
         self.description = description
-        self.character = character
+        self.haracter = character
         self.items = items
-        self.enemy = enemy
 
 
 class Item(object):
@@ -369,6 +368,11 @@ class Thief3(Character):
         print("...")
 
 
+class Helper(Character):
+    def __init__(self):
+        super(Helper, self).__init__("Yuri", 1000000000000, PlasmaPumpShotgun, BarrierPendant)
+
+
 class Player(object):
     def __init__(self, starting_location):
         self.health = 100
@@ -425,17 +429,18 @@ Character = Mute()
 Character2 = Doctor()
 Character3 = Merchant()
 Character4 = BlackSmith()
+Character5 = Helper()
 # Rooms
 
 Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "You are in your house with your backpack on "
-             "it has two exits one to the east and one to the west", None, None, Long_Sword)
+             "it has two exits one to the east and one to the west", Helper, Long_Sword)
 
-Backyard = Room("Your backyard", 'North_Forest', 'Water_Fountain', 'West_Forest', 'Spawn',
+Backyard = Room("Your backyard", 'NF', 'Water_Fountain', 'Spawn', 'WF',
                 "You look around and there is a hatchet in a log and there is"
-                " forest to the west, north, and a water fountain to the south.", None, None, [Hatchet])
+                " forest to the west, north, and a water fountain to the south.", None, Hatchet)
 
-NF = Room("Northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'WF',
+NF = Room("northern Forest", 'Grass Trail', 'Gates', 'Tar_Rivers', 'WF',
           "Your in a quiet forest and you hear grass hoppers to the north")
 
 WF = Room("Western Forest", 'NF', 'SF', 'Backyard', 'Creek',
@@ -444,7 +449,9 @@ WF = Room("Western Forest", 'NF', 'SF', 'Backyard', 'Creek',
 
 Creek = Room("Creek", 'FBL', 'Dense_Forest', 'WF', None,
              "You are at a creek on  east side of the"
-             "land.", None, None, [Katana])
+             "land.", None, Katana)
+
+FBL = Room("Frost bite lands", 'Rocko', 'Creek', None, None, "Its cold")
 
 EF = Room("Eastern Forest", 'NF', 'SF', 'Tar_River', None,
           "Your in a forest and hear a bubbling noise to the east")
@@ -469,16 +476,16 @@ BB = Room("Broken Bridge", 'RB', 'FT', None, 'EF',
 FT = Room("Fallen Tree", 'BB', 'Mines', 'Tar_Pit', 'Farm',
           "You are at the Fallen Tree, it looks like someone had put it there,"
           " it looks stable and you can go over it, theres is also a stump"
-          " near by with a battle axe in it", None, None, [Battle_Axe])
+          " near by with a battle axe in it", None, Battle_Axe)
 
-Mines = Room("Coal Mines", 'FT', None, None, 'Swamp', "Your in the Coal Mines", None, None, [EC])
+Mines = Room("Coal Mines", 'FT', None, None, 'Swamp', "Your in the Coal Mines", None, EC)
 
 Farm = Room("Abandoned Farm", 'SF', 'Swamp', 'FT', 'East_Dense_Forest',
-            "You are in a old farm theres lots of farming things in here", None, None, [Seeds])
+            "You are in a old farm theres lots of farming things in here", None, Seeds)
 
 Tar_Pit = Room("Tar Pit", 'WastelandE', 'RevineE', None, 'FT',
                "Your at a tar pit a bit away from the tar river, you see something sticking out of the pit",
-               [MTP2])
+               MTP2)
 
 RevineE = Room("Cave", 'Tar_Pit', 'WDen', None, None,
                "You walk up to the mountian side and you see an enteace to a cave, "
@@ -488,12 +495,12 @@ WDen = Room("Wyvern Cave", 'RavineE', None, 'WNest', None,
             "You reach the end of the entrance and you are surrounded by wyverns.", )
 
 WNest = Room("Wyvern Nest", None, None, None, 'WDen',
-             "The Wyverns have let you past them and you are now in the nest", None, None, [Pink_Egg])
+             "The Wyverns have let you past them and you are now in the nest", None, Pink_Egg)
 
 WastelandE = Room("The Wasteland Entrance", 'FOW', 'Tar_Pit', None, 'Rope_Bridge',
                   "You are at the front of what looks like a run down city. The entrance is a broken fence "
-                  "and you cna go in, but there is a weird fuzzy thing stuck in the fence", None, None,
-                  [Black_Bear_Skin])
+                  "and you cna go in, but there is a weird fuzzy thing stuck in the fence", None,
+                  Black_Bear_Skin)
 
 FOW = Room("Evergreen Road", None, 'WastelandE', 'RTHouse', None,
            "You walk into the place and you are walking down a road..."
@@ -543,6 +550,7 @@ while playing:
     print()
     if player.current_location.items is not None:
         print("There is a %s in here" % player.current_location.items.name)
+
     else:
         print("There is nothing in this room")
 
@@ -592,7 +600,7 @@ while playing:
         give_item = command[5:]
         for items in player.inventory:
             if items.name.lower() == give_item.lower():
-                
+                give_item = items
 
     elif command.lower() in directions:
         try:
