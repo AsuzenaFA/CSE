@@ -356,21 +356,22 @@ class Thief1(Character):
 class Thief2(Character):
     def __init__(self):
         super(Thief2, self).__init__("Dos", 90, Dagger, None)
-        print(self.name)
-        print("Yah your and outsider. This place isn't for you"
-              " are you lost")
 
 
 class Thief3(Character):
     def __init__(self):
         super(Thief3, self).__init__("Tres", 90, Dagger, None)
         print(self.name)
-        print("...")
 
 
 class Helper(Character):
     def __init__(self):
-        super(Helper, self).__init__("Yuri", 1000000000000, PlasmaPumpShotgun, BarrierPendant)
+        super(Helper, self).__init__("Elijah", 1000000000000, PlasmaPumpShotgun, BarrierPendant)
+
+
+class RatKing(Character):
+    def __init__(self):
+        super(RatKing, self).__init__("Rat King", 100000000000, PlasmaPumpShotgun, BarrierPendant)
 
 
 class Player(object):
@@ -512,7 +513,7 @@ RTHouse = Room("Rat King's house", None, None, None, 'FOW',
 Gates = Room("Front Gates", 'HT', 'Merchant', 'BV', 'Lawn',
              "you are at the front fo the village, "
              "you see a doctor with nurses and a big oak tree behind them to the north, "
-             "a merchant to the south, and a castle far towards the east")
+             "a merchant to the south, and a castle far towards the east", None, Iron_Armor)
 
 HT = Room("Doctor's Healing Tree", None, 'Gates', None, None,
           "You walk up to the area but are blocked bya nurse, the doctor "
