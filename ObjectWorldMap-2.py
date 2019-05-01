@@ -6,7 +6,7 @@ class Room(object):
         self.east = east
         self.west = west
         self.description = description
-        self.haracter = character
+        self.character = character
         self.items = items
 
 
@@ -321,7 +321,7 @@ class Mute(Character):
         super(Mute, self).__init__("Mute", 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
         if self.talk:
             print("Hey your new here, do you mind doin me a favor and take this letter to the "
-                  "group of people that live in a treehouse, they're in the north-western part of the land.")
+                  "group of people that live in a tree house, they're in the north-western part of the land.")
 
 
 class Merchant(Character):
@@ -454,6 +454,8 @@ Creek = Room("Creek", 'FBL', 'Dense_Forest', 'WF', None,
 
 FBL = Room("Frost bite lands", 'Rocko', 'Creek', None, None, "Its cold")
 
+Rocko = Room("Village of Rocko", None, 'FBl', None, 'CK', "A village full of orcs.")
+
 EF = Room("Eastern Forest", 'NF', 'SF', 'Tar_River', None,
           "Your in a forest and hear a bubbling noise to the east")
 
@@ -476,7 +478,7 @@ BB = Room("Broken Bridge", 'RB', 'FT', None, 'EF',
 
 FT = Room("Fallen Tree", 'BB', 'Mines', 'Tar_Pit', 'Farm',
           "You are at the Fallen Tree, it looks like someone had put it there,"
-          " it looks stable and you can go over it, theres is also a stump"
+          " it looks stable and you can go over it, there is also a stump"
           " near by with a battle axe in it", None, Battle_Axe)
 
 Mines = Room("Coal Mines", 'FT', None, None, 'Swamp', "Your in the Coal Mines", None, EC)
@@ -489,7 +491,7 @@ Tar_Pit = Room("Tar Pit", 'WastelandE', 'RevineE', None, 'FT',
                MTP2)
 
 RevineE = Room("Cave", 'Tar_Pit', 'WDen', None, None,
-               "You walk up to the mountian side and you see an enteace to a cave, "
+               "You walk up to the mountain side and you see an enteace to a cave, "
                "it has light coming out and you can walk into it.")
 
 WDen = Room("Wyvern Cave", 'RavineE', None, 'WNest', None,
@@ -551,6 +553,9 @@ while playing:
     print()
     if player.current_location.items is not None:
         print("There is a %s in here" % player.current_location.items.name)
+
+    if player.current_location.character is not None:
+        print("% is in the area" % player.current_location.character.name)
 
     else:
         print("There is nothing in this room")
