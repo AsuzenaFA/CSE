@@ -620,12 +620,12 @@ while playing:
             print("You don't have this item.")
 
     elif 'give' in command:
+        lose_item = command[4:]
+        _items_found = None
         for items in player.inventory:
             if items.name.lower() == lose_item.lower():
                 _items_found = items
 
-        lose_item = command[4:]
-        _items_found = None
         if _items_found is not None:
             txt = command
             x = txt.split()
