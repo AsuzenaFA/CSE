@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AsuzenaFA-ObjectWorldMap-2.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="331">
-              <caret line="585" column="28" lean-forward="true" selection-start-line="585" selection-start-column="28" selection-end-line="585" selection-end-column="28" />
+            <state relative-caret-position="299">
+              <caret line="631" column="36" lean-forward="true" selection-start-line="631" selection-start-column="36" selection-end-line="631" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -62,7 +62,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
+            <state relative-caret-position="12172">
               <caret line="716" column="25" selection-start-line="716" selection-start-column="25" selection-end-line="716" selection-end-column="25" />
             </state>
           </provider>
@@ -80,6 +80,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>take</find>
+      <find>Help</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -352,22 +353,24 @@
       <workItem from="1557931930473" duration="3078000" />
       <workItem from="1558018195123" duration="3342000" />
       <workItem from="1558109444470" duration="1905000" />
+      <workItem from="1558111492464" duration="173000" />
+      <workItem from="1558536600100" duration="6561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="48260000" />
+    <option name="totallyTimeSpent" value="54994000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.21748401" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49836066" visible="true" weight="0.2217484" />
       <window_info id="Structure" order="1" sideWeight="0.50163937" side_tool="true" weight="0.25037822" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.64463705" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.27302274" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,7 +378,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.64463705" />
       <window_info anchor="bottom" id="Terminal" order="11" weight="0.32936078" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -416,7 +419,7 @@
     <SUITE FILE_PATH="coverage/GitHub$AsuzenaFA__Validator.coverage" NAME="AsuzenaFA- Validator Coverage Results" MODIFIED="1556901981127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GitHub$More_Notes.coverage" NAME="More Notes Coverage Results" MODIFIED="1556551713692" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GitHub$ObjectWorldMap.coverage" NAME="ObjectWorldMap Coverage Results" MODIFIED="1558019839279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/GitHub$AsuzenaFA_ObjectWorldMap_2.coverage" NAME="AsuzenaFA-ObjectWorldMap-2 Coverage Results" MODIFIED="1558110884312" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/GitHub$AsuzenaFA_ObjectWorldMap_2.coverage" NAME="AsuzenaFA-ObjectWorldMap-2 Coverage Results" MODIFIED="1558543070399" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/GitHub$ObjectWorldMap_2.coverage" NAME="ObjectWorldMap-2 Coverage Results" MODIFIED="1557157245839" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
@@ -544,15 +547,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ObjectWorldMap.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="12172">
           <caret line="716" column="25" selection-start-line="716" selection-start-column="25" selection-end-line="716" selection-end-column="25" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AsuzenaFA-ObjectWorldMap-2.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="331">
-          <caret line="585" column="28" lean-forward="true" selection-start-line="585" selection-start-column="28" selection-end-line="585" selection-end-column="28" />
+        <state relative-caret-position="299">
+          <caret line="631" column="36" lean-forward="true" selection-start-line="631" selection-start-column="36" selection-end-line="631" selection-end-column="36" />
         </state>
       </provider>
     </entry>

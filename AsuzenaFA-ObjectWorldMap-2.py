@@ -306,7 +306,7 @@ class Scroll2(Scrolls):
 
 
 class Character(object):
-    def __init__(self, name, health, weapon, armor, talk=False):
+    def __init__(self, name, health, weapon, armor, inventory=[], talk=False):
         self.talk = talk
         self.health = health
         self.weapon = weapon
@@ -314,7 +314,7 @@ class Character(object):
         self.give = False
         self.charge = False
         self.name = name
-        self.inventory = []
+        self.inventory = inventory
 
     def take_damage(self, damage):
         self.health -= damage
@@ -329,7 +329,7 @@ class Character(object):
 
 class Mute(Character):
     def __init__(self):
-        super(Mute, self).__init__("Mute", 9999999999999999999, PlasmaPumpShotgun, BarrierPendant)
+        super(Mute, self).__init__("Mute", 9999999999999999999, PlasmaPumpShotgun, BarrierPendant, [])
         if self.talk:
             print("Hey your new here, do you mind doin me a favor and take this letter to the "
                   "group of people that live in a tree house, they're in the north-western part of the land.")
@@ -337,7 +337,7 @@ class Mute(Character):
 
 class Merchant(Character):
     def __init__(self):
-        super(Merchant, self).__init__("Token Coin", 99999999999999999, LongSword, BarrierPendant)
+        super(Merchant, self).__init__("Token Coin", 99999999999999999, LongSword, BarrierPendant, [])
         if self.talk:
             print("Hey new comer welcome to my shop, oh you have that mark on your neck, well i guess you can"
                   " take what ever you like... the thing here aren't that useful.")
@@ -377,7 +377,7 @@ class Thief3(Character):
 
 class Helper(Character):
     def __init__(self):
-        super(Helper, self).__init__("Elijah", 1000000000000, PlasmaPumpShotgun, BarrierPendant)
+        super(Helper, self).__init__("Elijah", 1000000000000, PlasmaPumpShotgun, BarrierPendant, [])
 
 
 class RatKing(Character):
@@ -450,7 +450,7 @@ Spawn = Room("Your Cabin", None, None, 'Lawn', 'Backyard',
              "\n"
              " == Elijah is in the room =="
              "\nHe Needs his meds"
-             "\n*go to the merchant in the near by village and bring it to him*", Helper, Long_Sword)
+             "\n*go to the merchant in the near by village and bring it to him*", Helper(), Long_Sword)
 
 Backyard = Room("Your backyard", 'NF', 'Water_Fountain', 'Spawn', 'WF',
                 "You look around and there is a hatchet in a log and there is"
@@ -583,27 +583,32 @@ while playing:
 
     if command.lower() in ['q', 'quit', 'exit']:
         playing = False
-    elif 'take ' in command:
-        found_item = command[4:]
+
+    elif 'take' in command:
+        found_item = command[5:]
         _items_found = None
         if player.current_location.items is not None:
             if player.current_location.items.name.lower() == found_item.lower():
                 _items_found = player.current_location.items
         if isinstance(_items_found, Item):
-            print("You picked it up")
             player.inventory.append(_items_found)
             player.current_location.items = None
+            print("You picked it up")
 
     elif 'help' in command:
+        print("")
+        print("====")
         print("Directions: Type 'North', 'South', 'West', 'East'")
         print("Short Version: Type 'n', 's' , 'w' , 'e'")
         print("To Pick Up items: Type 'take'")
         print("To Drop: Type 'drop'")
         print("To return: Type 'Give'")
         print("Goal of the game: 'return everything to its owners'")
+        print("====")
+        print("")
 
     elif 'drop' in command:
-        lose_item = command[4:]
+        lose_item = command[5:]
         _items_found = None
         for items in player.inventory:
             if items.name.lower() == lose_item.lower():
@@ -620,7 +625,7 @@ while playing:
             print("You don't have this item.")
 
     elif 'give' in command:
-        lose_item = command[4:]
+        lose_item = command[5:]
         _items_found = None
         for items in player.inventory:
             if items.name.lower() == lose_item.lower():
@@ -629,11 +634,17 @@ while playing:
         if _items_found is not None:
             txt = command
             x = txt.split()
-            print(x)
+
+        if player.current_location.character.inventory is None:
+            player.current_location.character.inventory.append(_items_found)
+            player.inventory.remove(_items_found)
 
     elif command.lower() in ["Open Bag", "i", "Inventory"]:
         for item in player.inventory:
-            print(item.name)
+            print("You have: \n"
+                  " %s" % item.name)
+        else:
+            print("You have nothing")
 
     elif command.lower() in directions:
         try:
